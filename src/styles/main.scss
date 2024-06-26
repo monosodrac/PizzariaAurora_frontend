@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  margin: 0 10vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  background-color: #332F2B;
+
+  img {
+    height: 5rem;
+  }
+
+  .menu-hamburguer {
+    width: 3rem;
+    cursor: pointer;
+
+    span {
+      height: .2rem;
+      width: 100%;
+      background-color: #fff;
+      display: block;
+      margin-bottom: .4rem;
+    }
+  }
+}
+
+.main-img {
+  img {
+    width: 100vw;
+  }
+}
