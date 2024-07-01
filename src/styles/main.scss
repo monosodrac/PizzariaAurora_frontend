@@ -12,6 +12,14 @@ body {
   font-family: judson;
 }
 
+/* container */
+.container {
+  margin: 0 5.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* header */
 header {
   background-color: #8a1f1f;
@@ -35,17 +43,6 @@ header {
       margin-left: 48px;
     }
   }
-}
-
-
-
-
-/* container */
-.container {
-  margin: 0 5.6vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* sections header */
@@ -112,21 +109,21 @@ header {
   height: 6rem;
 }
 
-// /* grid */
-// .destaques__list {
-//   margin: 5.6vw;
-//   display: grid;
-//   gap: 32px;
-//   grid-template-columns: repeat(3, 1fr);
+/* grid */
+.destaques__list {
+  margin: 5.6vw;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
   
-//   &__item {
-//     list-style: none;
+  &__item {
+    list-style: none;
     
-//     img {
-//       max-width: 100%;
-//     }
-//   }
-// }
+    img {
+      max-width: 100%;
+    }
+  }
+}
 
 // /* espaço */
 // .espaco {
