@@ -1,22 +1,38 @@
+import React from 'react';
 import Logo from '../imgs/logo.png';
-import MainImg from '../imgs/img-lg.png';
 
 export default function Header() {
-  return (
-    <div>
-      <header>
-        <div className="container">
-          <img src={Logo} alt="Logo do Restaurante" />
-          <div className='menu-hamburguer'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+    return(
+        <div>
+            <header>
+                <div className="container">
+                    <img src={Logo} alt="Pizzaria Aurora" />
+                    <nav>
+                        <ul>
+                            <li>
+                                <a>
+                                    Destaques
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    Espaço
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    Delivery
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
         </div>
-      </header>
-      <section className='main-img'>
-        <img src={MainImg} alt="Imagem principal" />
-      </section>
-    </div>
-  );
+    )
 }

@@ -1,72 +1,208 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Inter, sans-serif;
+  font-family: judson;
 }
 
-.container {
-  display: flex;
-  margin: 0 10vw;
-  align-items: center;
-  justify-content: space-between;
-}
-
+/* header */
 header {
-  background-color: #332F2B;
+  background-color: #8a1f1f;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 998;
 
   img {
-    height: 5rem;
+    height: 90px;
+    width: 120px;
   }
-
-  .menu-hamburguer {
-    width: 3rem;
-    cursor: pointer;
-
-    span {
-      height: .2rem;
-      width: 100%;
-      background-color: #fff;
-      display: block;
-      margin-bottom: .4rem;
-    }
-  }
-}
-
-.main-img {
-  img {
-    width: 100vw;
-  }
-}
-
-.about {
-  background-color: #CA8122;
-
-  .about__img {
-    margin: 2rem 0;
-  }
-
-  .about__text {
-    margin-left: 5rem;
-
-    &__head {
-      display: flex;
-      align-items: center;
-
-      h2 {
-        font-weight: bold;
-        font-size: 2rem;
-        color: #4B4032;
-      }
-    }
+  
+  li {
+    display: inline;
+    list-style: none;
     
-    &__p {
-      font-weight: normal;
-      font-size: 1rem;
-      color: #4B4032;
+    a {
+      text-decoration: none;
+      color: #D99455;
+      margin-left: 48px;
     }
   }
 }
+
+
+
+
+/* container */
+.container {
+  margin: 0 5.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* sections header */
+.hsection {
+  display: block;
+  padding: 16px;
+  width: 100%;
+  background-color: #8A1F1F;
+  color: #D99455;
+  text-align: center;
+  padding: 24px;
+  
+  .hsection h2 {
+    font-size: 42px;
+    position: sticky;
+    z-index: 999;
+  }
+}
+
+
+/* Hero */
+.image-text-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-image: url(../imgs/bg-hero.png);
+  background-size: cover;
+  height: 100vh;
+  padding: 0 2vw;
+  
+  &__text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  font-weight: bold;
+  font-size: 48px;
+  justify-content: center;
+  color: #A70D0D;
+  margin-bottom: 32px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 58px;
+  color: #fff;
+}
+
+.btn-hero img {
+  height: 6rem;
+}
+
+// /* grid */
+// .destaques__list {
+//   margin: 5.6vw;
+//   display: grid;
+//   gap: 32px;
+//   grid-template-columns: repeat(3, 1fr);
+  
+//   &__item {
+//     list-style: none;
+    
+//     img {
+//       max-width: 100%;
+//     }
+//   }
+// }
+
+// /* espaço */
+// .espaco {
+//   display: block;
+  
+//   &__list {
+//     list-style: none;
+//     margin: 5.6vw;
+    
+//     &__item img {
+//       width: 100%;
+//       margin: 2rem 0;
+//     }
+//   }
+// }
+
+// .grid-3 {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   gap: 2rem;
+// }
+
+// /* delivery */
+// .delivery {
+//   display: flex;
+//   margin: 5.6vw;
+  
+//   img {
+//     height: 19rem;
+//   }
+  
+//   &__text {
+//     margin-left: 3.5rem;
+//     font-size: 1.5rem;
+//     font-family: inknut antiqua;
+    
+//     h4 {
+//       font-size: 3rem;
+//       color: #961414;
+//     }
+//   }
+// }
+
+// .contato {
+//   background-color: #8A1F1F;
+  
+//   &__list {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     gap: 3rem;
+//     margin: 5.6vw;
+//     font-size: 2rem;
+//     color: #fff;
+//     align-items: center;
+    
+//     img {
+//       height: 17.7rem;
+//     }
+    
+//     .maps iframe {
+//       margin-bottom: 5.6vw;
+//       height: 17.7rem;
+//       width: 17.7rem;
+//       position: relative;
+//     }
+//   }
+// }
+
+// .rodape {
+//   grid-column-start: 1;
+//   grid-column-end: 4;
+//   border-top: 1px solid #fff;
+  
+//   h2 {
+//     margin-top: 1.2rem;
+//     text-align: center;
+//     font-size: 1rem;
+//   }
+// }
