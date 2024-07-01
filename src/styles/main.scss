@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Inter, sans-serif;
+}
+
 .container {
   display: flex;
   margin: 0 10vw;
@@ -35,5 +39,34 @@ header {
 .main-img {
   img {
     width: 100vw;
+  }
+}
+
+.about {
+  background-color: #CA8122;
+
+  .about__img {
+    margin: 2rem 0;
+  }
+
+  .about__text {
+    margin-left: 5rem;
+
+    &__head {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        color: #4B4032;
+      }
+    }
+    
+    &__p {
+      font-weight: normal;
+      font-size: 1rem;
+      color: #4B4032;
+    }
   }
 }
