@@ -1,7 +1,7 @@
 import React from "react";
-import ImgCard from '../imgs/cardapio.png'
-import ImgRod from '../imgs/rodizio.png'
-import ImgProm from '../imgs/promocoes.png'
+import ImgCard from '../Imgs/cardapio.png'
+import ImgRod from '../Imgs/rodizio.png'
+import ImgProm from '../Imgs/promocoes.png'
 
 export default function Destaques() {
   return (

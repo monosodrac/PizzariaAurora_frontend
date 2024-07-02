@@ -1,5 +1,5 @@
 import React from "react";
-import ImgLogo from '../imgs/logo.png';
+import ImgLogo from '../Imgs/logo.png';
 
 export default function Contato() {
     return(

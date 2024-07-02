@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Destaques from "./components/Destaques";
-import Espaco from "./components/Espaco";
-import Delivery from "./components/Delivery";
-import Contato from "./components/Contato";
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import Destaques from "./Components/Destaques";
+import Espaco from "./Components/Espaco";
+import Delivery from "./Components/Delivery";
+import Contato from "./Components/Contato";
 
 export default function App() {
   return (

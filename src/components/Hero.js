@@ -1,5 +1,5 @@
 import React from "react";
-import BtnHero from "../imgs/btn-hero.png";
+import BtnHero from "../Imgs/btn-hero.png";
 
 export default function Hero() {
   return (

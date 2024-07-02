@@ -1,9 +1,9 @@
 import React from 'react';
-import Img1Esp from '../imgs/spc-img1.png';
-import Img2Esp from '../imgs/spc-img2.png';
-import Img3Esp from '../imgs/spc-img3.png';
-import Img4Esp from '../imgs/spc-img4.png';
-import Img5Esp from '../imgs/spc-img5.png';
+import Img1Esp from '../Imgs/spc-img1.png';
+import Img2Esp from '../Imgs/spc-img2.png';
+import Img3Esp from '../Imgs/spc-img3.png';
+import Img4Esp from '../Imgs/spc-img4.png';
+import Img5Esp from '../Imgs/spc-img5.png';
 
 export default function Espaco() {
     return(

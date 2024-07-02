@@ -1,5 +1,5 @@
 import React from "react";
-import ImgIFood from '../imgs/ifood.png'
+import ImgIFood from '../Imgs/ifood.png'
 
 export default function Delivery() {
     return(

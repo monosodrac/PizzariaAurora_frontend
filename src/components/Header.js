@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../imgs/logo.png';
+import Logo from '../Imgs/logo.png';
 
 export default function Header() {
     return(
@@ -10,22 +10,22 @@ export default function Header() {
                     <nav>
                         <ul>
                             <li>
-                                <a>
+                                <a href='#dest'>
                                     Destaques
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a href='#spc'>
                                     Espaço
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a href='#dlvr'>
                                     Delivery
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a href='#cont'>
                                     Contato
                                 </a>
                             </li>
