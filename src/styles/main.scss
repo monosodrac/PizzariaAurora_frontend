@@ -125,81 +125,83 @@ header {
   }
 }
 
-// /* espaço */
-// .espaco {
-//   display: block;
+/* espaço */
+.espaco {
+  display: block;
   
-//   &__list {
-//     list-style: none;
-//     margin: 5.6vw;
+  &__list {
+    list-style: none;
+    margin: 5.6vw;
     
-//     &__item img {
-//       width: 100%;
-//       margin: 2rem 0;
-//     }
-//   }
-// }
+    &__item img {
+      width: 100%;
+      margin: 2rem 0;
+    }
+  }
+}
 
-// .grid-3 {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   gap: 2rem;
-// }
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
 
-// /* delivery */
-// .delivery {
-//   display: flex;
-//   margin: 5.6vw;
+/* delivery */
+.delivery {
+  display: flex;
+  margin: 5.6vw;
   
-//   img {
-//     height: 19rem;
-//   }
+  img {
+    height: 19rem;
+  }
   
-//   &__text {
-//     margin-left: 3.5rem;
-//     font-size: 1.5rem;
-//     font-family: inknut antiqua;
+  &__text {
+    margin-left: 3.5rem;
+    font-size: 1.5rem;
+    font-family: inknut antiqua;
     
-//     h4 {
-//       font-size: 3rem;
-//       color: #961414;
-//     }
-//   }
-// }
+    h4 {
+      font-size: 3rem;
+      color: #961414;
+    }
+  }
+}
 
-// .contato {
-//   background-color: #8A1F1F;
+.contato {
+  background-color: #8A1F1F;
   
-//   &__list {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr;
-//     gap: 3rem;
-//     margin: 5.6vw;
-//     font-size: 2rem;
-//     color: #fff;
-//     align-items: center;
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin: 5.6vw;
+    font-size: 2rem;
+    color: #fff;
+    align-items: center;
     
-//     img {
-//       height: 17.7rem;
-//     }
+    img {
+      height: 17.7rem;
+    }
     
-//     .maps iframe {
-//       margin-bottom: 5.6vw;
-//       height: 17.7rem;
-//       width: 17.7rem;
-//       position: relative;
-//     }
-//   }
-// }
+    .maps {
+      iframe {
+        margin-bottom: 5.6vw;
+        height: 17.7rem;
+        width: 17.7rem;
+        position: relative;
+      }
+    } 
+  }
+}
 
-// .rodape {
-//   grid-column-start: 1;
-//   grid-column-end: 4;
-//   border-top: 1px solid #fff;
+.rodape {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-top: 1px solid #fff;
   
-//   h2 {
-//     margin-top: 1.2rem;
-//     text-align: center;
-//     font-size: 1rem;
-//   }
-// }
+  h2 {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
