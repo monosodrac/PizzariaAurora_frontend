@@ -5,7 +5,7 @@ import Autenticados from './Autenticados.routes';
 
 export default function Rotas() {
 
-    const autenticado = false
+    const autenticado = false;
 
     return (
         <>

@@ -205,3 +205,32 @@ header {
     font-size: 1rem;
   }
 }
+
+.btn__login {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 45px;
+
+  CgProfile {
+    height: 5rem;
+  }
+}
+
+.Modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: #f9d004;  
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #79ee0b;
+}
