@@ -208,13 +208,14 @@ header {
 
 .btn__login {
   position: absolute;
-  right: 2rem;
-  bottom: 2rem;
+  right: 5rem;
+  bottom: 5rem;
   border-radius: 45px;
-
-  CgProfile {
-    height: 5rem;
-  }
+  height: 5rem;
+  width: 5rem;
+  background-color: #8a1f1f;
+  color: #D99455;
+  font-size: 5rem;
 }
 
 .Modal {
