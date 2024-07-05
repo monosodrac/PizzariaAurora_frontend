@@ -4,7 +4,7 @@ import Logo from '../Imgs/logo.png';
 export default function Header() {
     return(
         <div>
-            <header>
+            <header id='head'>
                 <div className="container">
                     <img src={Logo} alt="Pizzaria Aurora" />
                     <nav>

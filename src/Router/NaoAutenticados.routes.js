@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CgProfile } from "react-icons/cg";
+
+import { TbCircleArrowUp } from "react-icons/tb";
 
 import Inicio from '../Inicio';
 import Header from '../Components/Header';
+import ModalLogin from '../Components/ModalLogin';
 
 export default function NaoAutenticados() {
     return (
@@ -14,7 +16,8 @@ export default function NaoAutenticados() {
 
                 <Route path='*' element={<Inicio />} />
             </Routes>
-        <a href='' className='btn__login'><CgProfile /></a>
+        <ModalLogin />
+        <a href='#head' className='btn__up'><TbCircleArrowUp /></a>
         </BrowserRouter>
     );
 };
