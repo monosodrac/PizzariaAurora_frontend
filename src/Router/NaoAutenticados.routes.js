@@ -14,7 +14,7 @@ export default function NaoAutenticados() {
 
                 <Route path='*' element={<Inicio />} />
             </Routes>
-        <button className='btn__login'><CgProfile /></button>
+        <a href='' className='btn__login'><CgProfile /></a>
         </BrowserRouter>
     );
 };
