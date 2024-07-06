@@ -212,7 +212,7 @@ button {
 
 .btn__login {
   position: fixed;
-  bottom: 8.5rem;
+  bottom: 5rem;
   right: 10rem;
   border-radius: 45px;
   height: 4rem;
@@ -226,7 +226,7 @@ button {
 
 .btn__up {
   position: fixed;
-  bottom: 8.8rem;
+  bottom: 5.3rem;
   right: 5rem;
   border-radius: 45px;
   height: 4rem;
@@ -264,6 +264,7 @@ button {
 
   form {
     display: block;
-    margin: 0 auto;
+    ul {
+    }
   }
 }
