@@ -4,13 +4,13 @@ import ImgIFood from '../Imgs/ifood.png'
 export default function Delivery() {
     return(
         <div>
-            <div class="hsection" id="dlvr">
+            <div className="hsection" id="dlvr">
                 <h2>Delivery</h2>
             </div>
-            <section class="delivery">
-                <div class="container">
+            <section className="delivery">
+                <div className="container">
                     <img src={ImgIFood} alt="Logo do Ifood" />
-                    <div class="delivery__text">
+                    <div className="delivery__text">
                         <h4>
                             Para comer em casa
                         </h4>

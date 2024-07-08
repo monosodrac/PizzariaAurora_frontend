@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import Login from '../Components/Login';
 
 import { CgProfile } from "react-icons/cg";
+
 export default function ModalLogin() {
   const [modalAberto, setModalAberto] = useState(false);
 

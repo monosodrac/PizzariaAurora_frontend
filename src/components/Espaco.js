@@ -8,27 +8,27 @@ import Img5Esp from '../Imgs/spc-img5.png';
 export default function Espaco() {
     return(
         <div>
-            <div class="hsection" id="spc">
+            <div className="hsection" id="spc">
                 <h2>Espaço</h2>
             </div>
-            <section class="espaco">
-                <div class="container">
-                    <ul class="espaco__list">
-                        <li class="espaco__list__item" id="img1">
+            <section className="espaco">
+                <div className="container">
+                    <ul className="espaco__list">
+                        <li className="espaco__list__item" id="img1">
                             <img src={Img1Esp} alt="Pizza pronta" />
                         </li>
-                        <div class="grid-3">
-                            <li class="espaco__list__item" id="img2">
+                        <div className="grid-3">
+                            <li className="espaco__list__item" id="img2">
                                 <img src={Img2Esp} alt="Espaço interno do restaurante" />
                             </li>
-                            <li class="espaco__list__item" id="img3">
+                            <li className="espaco__list__item" id="img3">
                                 <img src={Img3Esp} alt="Espaço interno do restaurante" />
                             </li>
-                            <li class="espaco__list__item" id="img4">
+                            <li className="espaco__list__item" id="img4">
                                 <img src={Img4Esp} alt="Espaço interno do restaurante" />
                             </li>
                         </div>
-                        <li class="espaco__list__item" id="img5">
+                        <li className="espaco__list__item" id="img5">
                             <img src={Img5Esp} alt="Pizza indo ao forno" />
                         </li>
                     </ul>
