@@ -1,0 +1,42 @@
+@use 'variaveis';
+
+header {
+    background-color: variaveis.$corPrincipal;
+    width: 100%;
+    top: 0;
+    left: 0;
+  
+    img {
+        height: 90px;
+        width: 120px;
+    }
+    
+    li {
+        display: inline;
+        list-style: none;
+      
+        a {
+            text-decoration: none;
+            color: variaveis.$corSecundaria;
+            margin-left: 48px;
+        }
+    }
+}
+
+@mixin headSection() {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    background-color: variaveis.$corPrincipal;
+    color: variaveis.$corSecundaria;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.hsection {
+    @include headSection();
+    
+    .hsection h2 {
+        font-size: 2.6rem;
+    }
+}

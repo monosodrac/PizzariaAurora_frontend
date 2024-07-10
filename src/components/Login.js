@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function Login() {
     const navegacao = useNavigate();
@@ -29,14 +29,14 @@ export default function Login() {
             <div class="hsection">
                 <h2>Login</h2>
             </div>
-            <form onSubmit={logarUsuarios}>
+            <div class="container">
+                <form onSubmit={logarUsuarios}>
                     <input type="email" placeholder="E-mail" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
                     <input type="password" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <a href='/'>Esqueci minha senha</a>
-                <button type="submit">
-                    Enviar
-                </button>
-            </form>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     );
 };

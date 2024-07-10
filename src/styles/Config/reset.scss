@@ -10,3 +10,10 @@
 html {
     scroll-behavior: smooth;
 }
+
+.container {
+    margin: 0 5.6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

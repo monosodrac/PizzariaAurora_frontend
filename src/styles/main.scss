@@ -1,54 +1,8 @@
 @use 'config/reset';
 @use 'config/variaveis';
+@use 'config/modal';
+@use 'config/headers';
 @use 'sass:math';
-
-/* container */
-.container {
-  margin: 0 5.6vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* header */
-header {
-  background-color: variaveis.$corPrincipal;
-  width: 100%;
-  top: 0;
-  left: 0;
-
-  img {
-    height: 90px;
-    width: 120px;
-  }
-  
-  li {
-    display: inline;
-    list-style: none;
-    
-    a {
-      text-decoration: none;
-      color: variaveis.$corSecundaria;
-      margin-left: 48px;
-    }
-  }
-}
-
-/* sections header */
-.hsection {
-  display: block;
-  padding: 16px;
-  width: 100%;
-  background-color: variaveis.$corPrincipal;
-  color: variaveis.$corSecundaria;
-  text-align: center;
-  padding: 1.5rem;
-  
-  .hsection h2 {
-    font-size: 42px;
-  }
-}
-
 
 /* Hero */
 .image-text-section {
@@ -224,39 +178,4 @@ button {
   background-color: transparent;
   color: variaveis.$corSecundaria;
   font-size: 4.5rem;
-}
-
-.Modal {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
-
-  .btn__fecharLogin {
-  background-color: variaveis.$corPrincipal;
-  }
-}
-
-.Overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-}
-
-.login {
-  background-color: #fff;
-  height: 100%;
-  width: 100%;
-
-  form {
-    margin: 5.6vw;
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    text-align: center;
-  }
 }
