@@ -1,16 +1,18 @@
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// import DashBoardEmpresa from '../Dashboard/Empresa';
+import DashBoardCliente from '../Dashboard/Cliente';
+import Header from '../Components/Header';
 
-// export default function Autenticados() {
-//     return (
-//         <BrowserRouter>
-//             <Routes>
-//                 <Route path='/' element={<DashBoardEmpresa />} />
+export default function Autenticados() {
+    return (
+        <BrowserRouter>
+        <Header />
+            <Routes>
+                <Route path='/' element={<DashBoardCliente />} />
 
 
-//                 <Route path='*' element={<DashBoardEmpresa />} />
-//             </Routes>
-//         </BrowserRouter>
-//     );
-// };
+                <Route path='*' element={<DashBoardCliente />} />
+            </Routes>
+        </BrowserRouter>
+    );
+};

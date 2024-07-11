@@ -2,6 +2,8 @@ import React from "react";
 import ImgLogo from '../Imgs/logo.png';
 import Iframe from "react-iframe";
 
+import '../Dashboard/Empresa';
+
 export default function Contato() {
     return (
         <div>
