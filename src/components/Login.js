@@ -18,7 +18,7 @@ export default function Login() {
             return;
         }
 
-        if (usuario === 'lu@gm' && senha === '123456') {
+        if (usuario === 'empresa@gmail.com' && senha === '666') {
             toast.success('Login Efetuado com Sucesso');
             navegacao('/');
         } else {
@@ -26,12 +26,6 @@ export default function Login() {
             return;
         };
     };
-
-    // function atualizaTabela() {
-    //     const USIncor = document.querySelector('#login__incor');
-    //     USIncor.innerHTML = 'Usuario/Senha incorretos';
-    //     return;
-    // }
 
     return (
         <div className="login">
@@ -43,7 +37,6 @@ export default function Login() {
                     <input type="email" placeholder="E-mail" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
                     <input type="password" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <a href='/'>Esqueci minha senha</a>
-                    {/* <p id="login_incor"></p> */}
                     <button type="submit">Enviar</button>
                 </form>
             </div>

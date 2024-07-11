@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 // import { useNavigate } from 'react-router-dom';
 
 import '../Dashboard/Cliente';
@@ -6,21 +7,24 @@ import '../Dashboard/Cliente';
 export default function CadCliente() {
     // const navegacao = useNavigate();
 
-    const [usuario, setUsuario] = useState();
-    const [telefone, setTelefone] = useState();
-    const [cep, setCep] = useState();
-    const [rua, setRua] = useState();
-    const [numCasa, setNumCasa] = useState();
-    const [bairro, setBairro] = useState();
-    const [email, setEmail] = useState();
+    const { register, handleSubmit, setValue, setFocus } = useForm();
 
-    function cadUsuarios(e) {
-        e.preventDefault();
+    const onSubmit = (e) => {
+        console.log(e);
+    };
 
-        if (!usuario || !telefone || !cep || !rua || !numCasa || !bairro || !email) {
-            alert('Campos em Branco');
-            return;
-        };
+    const checkCEP = (e) => {
+        const cep = e.target.value.replace(/\D/g, "");
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setValue('address', data.logradouro);
+                setValue('neighborhood', data.bairro);
+                setValue('city', data.localidade);
+                setValue('uf', data.uf);
+                setFocus("addressNumber");
+            });
     };
 
     return (
@@ -29,15 +33,32 @@ export default function CadCliente() {
                 <h2>Cadastro</h2>
             </div>
             <div class="container">
-                <form onSubmit={cadUsuarios}>
-                    <input type="text" required='true' placeholder="Seu Nome" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
-                    <input type="number" required='true' placeholder="Seu Telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
-                    <input type="number" required='true' placeholder="Seu CEP" value={cep} onChange={(e) => setCep(e.target.value)} />
-                    <input type="text" required='true' placeholder="Sua Rua" value={rua} onChange={(e) => setRua(e.target.value)} />
-                    <input type="text" required='true' placeholder="Número da Casa" value={numCasa} onChange={(e) => setNumCasa(e.target.value)} />
-                    <input type="text" required='true' placeholder="Seu Bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} />
-                    <input type="email" required='true' placeholder="Seu E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <button type="submit">Enviar</button>
+                <form className="flex-col" onSubmit={handleSubmit(onSubmit)}>
+                    <label>
+                        CEP:
+                        <input type="text" {...register("cep")} onBlur={checkCEP} />
+                    </label>
+                    <label>
+                        Rua:
+                        <input type="text" {...register("address")} />
+                    </label>
+                    <label>
+                        Numero:
+                        <input type="number" {...register("addressNumber")} />
+                    </label>
+                    <label>
+                        Bairro:
+                        <input type="text" {...register("neighborhood")} />
+                    </label>
+                    <label>
+                        Cidade:
+                        <input type="text" {...register("city")} />
+                    </label>
+                    <label>
+                        UF:
+                        <input type="text" {...register("uf")} />
+                    </label>
+                    <button className="btn" type="submit">Enviar</button>
                 </form>
             </div>
         </div>
