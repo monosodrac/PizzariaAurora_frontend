@@ -24,7 +24,13 @@
     bottom: 40px;
 
     .btn__fecharLogin {
+        display: block;
+        padding: 1rem;
+        width: 100%;
         background-color: variaveis.$corPrincipal;
+        color: variaveis.$corSecundaria;
+        text-align: center;
+        padding: 1.5rem;
     }
 }
 
@@ -47,16 +53,16 @@
         display: flex;
         flex-direction: column;
         max-width: 100%;
-        text-align: center;
         width: 100%;
+        text-align: center;
 
         input {
             @include formComps();
         }
 
-        a {
+        .cad-res {
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
         }
 
         button {

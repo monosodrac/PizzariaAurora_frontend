@@ -22,7 +22,7 @@ export default function ModalLogin() {
 
       <Modal className="Modal" overlayClassName="Overlay" isOpen={modalAberto}>
         <Login />
-        <button onClick={fecharModal} className='btn__fecharLogin'>Fechar Modal</button>
+        <button onClick={fecharModal} className='btn__fecharLogin'>Voltar ao Inicio</button>
       </Modal>
     </div>
   );

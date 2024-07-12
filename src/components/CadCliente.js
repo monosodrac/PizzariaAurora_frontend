@@ -35,6 +35,18 @@ export default function CadCliente() {
             <div class="container">
                 <form className="flex-col" onSubmit={handleSubmit(onSubmit)}>
                     <label>
+                        Nome:
+                        <input type="text" {...register("name")} />
+                    </label>
+                    <label>
+                        Telefone:
+                        <input type="tel" {...register("tel")} />
+                    </label>
+                    <label>
+                        E-mail:
+                        <input type="email" {...register("email")} />
+                    </label>
+                    <label>
                         CEP:
                         <input type="text" {...register("cep")} onBlur={checkCEP} />
                     </label>
@@ -61,6 +73,7 @@ export default function CadCliente() {
                     <button className="btn" type="submit">Enviar</button>
                 </form>
             </div>
+            <a href="/">Voltar ao início</a>
         </div>
     );
 };

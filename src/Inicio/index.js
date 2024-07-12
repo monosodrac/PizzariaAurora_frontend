@@ -1,5 +1,6 @@
 import React from "react";
 
+import Header from '../Components/Header';
 import Hero from "../Components/Hero";
 import Destaques from "../Components/Destaques";
 import Espaco from "../Components/Espaco";
@@ -11,6 +12,7 @@ import "../Styles/main.scss";
 export default function App() {
     return (
         <div>
+            <Header />
             <Hero />
             <Destaques />
             <Espaco />
