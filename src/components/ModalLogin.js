@@ -18,11 +18,16 @@ export default function ModalLogin() {
 
   return (
     <div>
-      <button onClick={abrirModal} className='btn__login'><CgProfile /></button>
+      {modalAberto ?
+        (
+          <button onClick={fecharModal} className='btn__login'><CgProfile /></button>
+        ) : (
+          <button onClick={abrirModal}className='btn__login'><CgProfile /></button>
+        )
+      };
 
       <Modal className="Modal" overlayClassName="Overlay" isOpen={modalAberto}>
         <Login />
-        <button onClick={fecharModal} className='btn__fecharLogin'>Voltar ao Inicio</button>
       </Modal>
     </div>
   );

@@ -2,8 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 // import { useNavigate } from 'react-router-dom';
 
-import '../Dashboard/Cliente';
-
 export default function CadCliente() {
     // const navegacao = useNavigate();
 
@@ -28,7 +26,7 @@ export default function CadCliente() {
     };
 
     return (
-        <div className="login">
+        <div className="cadastro">
             <div class="hsection">
                 <h2>Cadastro</h2>
             </div>

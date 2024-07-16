@@ -34,13 +34,13 @@ export default function Login() {
             </div>
             <div class="container">
                 <form onSubmit={logarUsuarios}>
-                    <input type="email" placeholder="E-mail" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
+                    <input type="email" autoFocus placeholder="E-mail" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
                     <input type="password" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <div class="cad-res">
                         <a href="/cadastro-cliente">Cadastre-se</a>
                         <a href='/'>Esqueci minha senha</a>
                     </div>
-                    <button type="submit">Enviar</button>
+                    <button type="submit">Fazer Login</button>
                 </form>
             </div>
         </div>
