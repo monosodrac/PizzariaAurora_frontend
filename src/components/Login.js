@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-
-import '../Dashboard/Cliente';
+// import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
 
 export default function Login() {
-    const navegacao = useNavigate();
+    // const navegacao = useNavigate();
 
     const [usuario, setUsuario] = useState();
     const [senha, setSenha] = useState();
@@ -19,8 +17,8 @@ export default function Login() {
         }
 
         if (usuario === 'empresa@gmail.com' && senha === '666') {
-            toast.success('Login Efetuado com Sucesso');
-            navegacao('/');
+            alert('Login Efetuado com Sucesso');
+            // navegacao('/');
         } else {
             alert('Usuario/Senha incorretos');
             return;

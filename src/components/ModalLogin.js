@@ -24,7 +24,7 @@ export default function ModalLogin() {
         ) : (
           <button onClick={abrirModal}className='btn__login'><CgProfile /></button>
         )
-      };
+      }
 
       <Modal className="Modal" overlayClassName="Overlay" isOpen={modalAberto}>
         <Login />

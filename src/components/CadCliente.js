@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { IoMdArrowRoundBack } from "react-icons/io";
 // import { useNavigate } from 'react-router-dom';
 
 export default function CadCliente() {
@@ -71,7 +72,7 @@ export default function CadCliente() {
                     <button className="btn" type="submit">Enviar</button>
                 </form>
             </div>
-            <a href="/">Voltar ao início</a>
+            <a href="/"><IoMdArrowRoundBack /></a>
         </div>
     );
 };
