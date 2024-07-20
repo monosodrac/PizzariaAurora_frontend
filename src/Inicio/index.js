@@ -12,12 +12,18 @@ import "../Styles/main.scss";
 export default function App() {
     return (
         <div>
-            <Header />
-            <Hero />
-            <Destaques />
-            <Espaco />
-            <Delivery />
-            <Contato />
+            <header>
+                <Header />
+            </header>
+            <main>
+                <Hero />
+                <Destaques />
+                <Espaco />
+                <Delivery />
+            </main>
+            <footer>
+                <Contato />
+            </footer>
         </div>
     );
 }

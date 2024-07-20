@@ -1,10 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { IoMdArrowRoundBack } from "react-icons/io";
-// import { useNavigate } from 'react-router-dom';
 
 export default function CadCliente() {
-    // const navegacao = useNavigate();
 
     const { register, handleSubmit, setValue, setFocus } = useForm();
 
@@ -32,7 +30,7 @@ export default function CadCliente() {
                 <h2>Cadastro</h2>
             </div>
             <div class="container">
-                <form className="flex-col" onSubmit={handleSubmit(onSubmit)}>
+                <form className="form__client" onSubmit={handleSubmit(onSubmit)}>
                     <label>
                         Nome:
                         <input type="text" {...register("name")} />
