@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { TbCircleArrowUp } from "react-icons/tb";
-
 import Inicio from '../Inicio';
-import ModalLogin from '../Components/ModalLogin';
 import CadCliente from '../Components/CadCliente';
+import Cardapio from '../Cardapio/index';
 
 export default function NaoAutenticados() {
     return (
@@ -13,11 +11,10 @@ export default function NaoAutenticados() {
                 <Route path='/' element={<Inicio />} />
 
                 <Route path='/cadastro-cliente' element={<CadCliente />} />
+                <Route path='/cardapio' element={<Cardapio />} />
 
                 <Route path='*' element={<Inicio />} />
             </Routes>
-        <ModalLogin />
-        <a href='#head' className='btn__up'><TbCircleArrowUp /></a>
         </BrowserRouter>
     );
 };

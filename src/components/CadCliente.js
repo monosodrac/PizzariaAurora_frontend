@@ -4,10 +4,11 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function CadCliente() {
 
-    const { register, handleSubmit, setValue, setFocus } = useForm();
+    const { register, handleSubmit, setValue, setFocus, reset } = useForm();
 
     const onSubmit = (e) => {
         console.log(e);
+        reset();
     };
 
     const checkCEP = (e) => {
@@ -15,7 +16,6 @@ export default function CadCliente() {
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setValue('address', data.logradouro);
                 setValue('neighborhood', data.bairro);
                 setValue('city', data.localidade);
@@ -26,14 +26,14 @@ export default function CadCliente() {
 
     return (
         <div className="cadastro">
-            <div class="hsection">
+            <div className="hsection">
                 <h2>Cadastro</h2>
             </div>
             <div class="container">
                 <form className="form__client" onSubmit={handleSubmit(onSubmit)}>
                     <label>
                         Nome:
-                        <input type="text" {...register("name")} />
+                        <input autoFocus type="text" {...register("name")} />
                     </label>
                     <label>
                         Telefone:

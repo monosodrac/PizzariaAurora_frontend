@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-import Login from '../Components/Login';
+import Login from './Login';
 
 import { CgProfile } from "react-icons/cg";
 
@@ -22,7 +22,7 @@ export default function ModalLogin() {
         (
           <button onClick={fecharModal} className='btn__login'><CgProfile /></button>
         ) : (
-          <button onClick={abrirModal}className='btn__login'><CgProfile /></button>
+          <button onClick={abrirModal} className='btn__login'><CgProfile /></button>
         )
       }
 

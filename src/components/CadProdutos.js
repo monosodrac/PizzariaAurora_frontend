@@ -12,7 +12,7 @@ export default function CadProdutos() {
 
     return (
         <div className="cadastro">
-            <div class="hsection">
+            <div className="hsection">
                 <h2>Cadastro</h2>
             </div>
             <div class="container">

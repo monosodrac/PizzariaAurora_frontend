@@ -95,6 +95,10 @@
 
         svg {
             margin-bottom: 2.53vw;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
 }
