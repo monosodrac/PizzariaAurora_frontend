@@ -27,8 +27,16 @@ export default function CadProdutos() {
                         <input type="text" />
                     </label>
                     <label>
-                        Nome do produto:
-                        <input type="text" {...register("name")} />
+                        quantidade:
+                        <input type="number" {...register("quant")} />
+                    </label>
+                    <label>
+                        Preço unitário:
+                        <input type="number" {...register("uni")} />
+                    </label>
+                    <label>
+                        Preço total:
+                        <input type="number" {...register("total")} />
                     </label>
                     <button className="btn" type="submit">Enviar</button>
                 </form>
