@@ -23,7 +23,6 @@ header {
 
 @mixin headSection() {
     display: block;
-    padding: 1rem;
     width: 100%;
     background-color: variaveis.$corPrincipal;
     color: variaveis.$corSecundaria;

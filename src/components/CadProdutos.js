@@ -3,20 +3,21 @@ import { useForm } from "react-hook-form";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function CadProdutos() {
-    const [formData, setFormData] = useState();
-    const [imageURL, setImageURL] = useState();
+    const [products, setProducts] = useState([]);
+    const [imageURL, setImageURL] = useState(null);
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
-        setFormData({
+        const newProduct = {
             name: data.name,
             quant: data.quant,
             uni: data.uni,
             total: data.total,
-            ImageURL: imageURL
-        });
+            imageURL: imageURL
+        };
+        setProducts([...products, newProduct]);
         reset();
+        setImageURL(null);
     };
 
     const handleImageChange = (e) => {
@@ -34,7 +35,7 @@ export default function CadProdutos() {
             </div>
             <section id="produtos">
                 <div className="row">
-                    <nav className="nav nav-pills flex-column col-lg-2">
+                    <nav className="nav nav-pills flex-column col-lg-2 col-md-12">
                         <button data-bs-toggle="tab" data-bs-target="#aba1" className="nav-link active" type="button">Cadastro</button>
                         <button data-bs-toggle="tab" data-bs-target="#aba2" className="nav-link" type="button">Produtos Cadastrados</button>
                     </nav>
@@ -65,28 +66,30 @@ export default function CadProdutos() {
                                     <button className="btn" type="submit">Enviar</button>
                                 </form>
                             </div>
-                            <a href="/"><IoMdArrowRoundBack /></a>
                         </div>
                         <div className="tab-pane" id="aba2">
-                            {formData ? (
-                                <div>
-                                    <h3>Produtos cadastrados</h3>
-                                    <p>Nome: {formData.name}</p>
-                                    <p>Quantidade: {formData.quant}</p>
-                                    <p>Preço Unitário: {formData.uni}</p>
-                                    <p>Preço Total: {formData.total}</p>
-                                    {imageURL && (
-                                        <div>
-                                            <img src={imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
-                                        </div>
-                                    )}
-                                </div>
+                            <h3>Produtos cadastrados</h3>
+                            {products.length > 0 ? (
+                                products.map((product, index) => (
+                                    <div key={index} className="product-item">
+                                        {product.imageURL && (
+                                            <div>
+                                                <img src={product.imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
+                                            </div>
+                                        )}
+                                        <p>Nome: {product.name}</p>
+                                        <p>Quantidade: {product.quant}</p>
+                                        <p>Preço Unitário: {product.uni}</p>
+                                        <p>Preço Total: {product.total}</p>
+                                    </div>
+                                ))
                             ) : (
                                 <p>Nenhum produto cadastrado</p>
                             )}
                         </div>
                     </div>
                 </div>
+                <a href="/"><IoMdArrowRoundBack /></a>
             </section>
         </div>
     );

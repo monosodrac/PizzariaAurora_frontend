@@ -34,4 +34,4 @@ export default function Contato() {
             </footer>
         </div>
     );
-}
+};

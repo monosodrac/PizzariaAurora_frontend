@@ -1,6 +1,6 @@
 @use 'config/reset';
 @use 'config/variaveis';
-@use 'config/modal';
+@use 'config/cadastro';
 @use 'config/headers';
 @use 'sass:math';
 
@@ -52,13 +52,13 @@
 
 /* grid */
 .destaques__list {
-  margin: 5.6vw;
   display: grid;
-  gap: 32px;
+  gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   
   &__item {
     list-style: none;
+    margin: 4rem 0;
     
     img {
       max-width: 100%;
@@ -72,11 +72,18 @@
   
   &__list {
     list-style: none;
-    margin: 5.6vw;
     
     &__item img {
       width: 100%;
-      margin: 2rem 0;
+
+    }
+
+    #img1 {
+      margin: 5rem 0 2rem;
+    }
+
+    #img5 {
+      margin: 2rem 0 5rem;
     }
   }
 }
@@ -90,14 +97,13 @@
 /* delivery */
 .delivery {
   display: flex;
-  margin: 5.6vw;
+  margin: 5rem;
   
   img {
     height: 19rem;
   }
   
   &__text {
-    margin-left: 3.5rem;
     font-size: 1.5rem;
     font-family: variaveis.$fontDlvr;
     
@@ -115,10 +121,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
-    margin: 5.6vw;
     font-size: 2rem;
     color: #fff;
     align-items: center;
+    margin: 5rem 0;
     
     img {
       height: 17.7rem;
@@ -131,19 +137,19 @@
         width: 17.7rem;
         position: relative;
       }
-    } 
-  }
-}
+    }
 
-.rodape {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  border-top: 1px solid #fff;
-  
-  h2 {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 1rem;
+    .rodape {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      border-top: 1px solid #fff;
+      
+      h2 {
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
   }
 }
 

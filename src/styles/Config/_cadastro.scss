@@ -94,11 +94,30 @@
         font-size: 4rem;
 
         svg {
-            margin-bottom: 2.53vw;
+            position: fixed;
+            bottom: 5.3rem;
+            left: 5rem;
 
             &:hover {
                 transform: scale(1.2);
             }
         }
     }
+}
+
+.nav-pills {
+    .nav-link.active {
+        background-color: variaveis.$corSecundaria;
+        color: variaveis.$corTitle;
+    }
+    
+    .nav-link {
+        color: variaveis.$corSecundaria;
+        box-shadow: none;
+    }
+}
+
+.product-item {
+    border-bottom: 1px solid black;
+    margin: 1rem 0;
 }

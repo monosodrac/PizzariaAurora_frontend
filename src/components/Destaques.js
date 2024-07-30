@@ -11,7 +11,7 @@ export default function Destaques() {
       </div>
       <section className="destaques">
         <div className="container">
-          <ul className="destaques__list image-text-section--image-full-width-grid">
+          <ul className="destaques__list">
             <li className="destaques__list__item">
               <a href="/cardapio">
                 <img src={ImgCard} alt="Anúncio Cardápio" />
