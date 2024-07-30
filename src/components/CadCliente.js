@@ -29,44 +29,44 @@ export default function CadCliente() {
             <div className="hsection">
                 <h2>Cadastro</h2>
             </div>
-            <div class="container">
+            <div className="container">
                 <form className="form__client" onSubmit={handleSubmit(onSubmit)}>
                     <label>
                         Nome:
-                        <input autoFocus type="text" {...register("name")} />
                     </label>
+                    <input autoFocus type="text" {...register("name")} />
                     <label>
                         Telefone:
-                        <input type="tel" {...register("tel")} />
                     </label>
+                    <input type="tel" {...register("tel")} />
                     <label>
                         E-mail:
-                        <input type="email" {...register("email")} />
                     </label>
+                    <input type="email" {...register("email")} />
                     <label>
                         CEP:
-                        <input type="text" {...register("cep")} onBlur={checkCEP} />
                     </label>
+                    <input type="text" {...register("cep")} onBlur={checkCEP} />
                     <label>
                         Rua:
-                        <input type="text" {...register("address")} />
                     </label>
+                    <input type="text" {...register("address")} />
                     <label>
                         Numero:
-                        <input type="number" {...register("addressNumber")} />
                     </label>
+                    <input type="number" {...register("addressNumber")} />
                     <label>
                         Bairro:
-                        <input type="text" {...register("neighborhood")} />
                     </label>
+                    <input type="text" {...register("neighborhood")} />
                     <label>
                         Cidade:
-                        <input type="text" {...register("city")} />
                     </label>
+                    <input type="text" {...register("city")} />
                     <label>
                         UF:
-                        <input type="text" {...register("uf")} />
                     </label>
+                    <input type="text" {...register("uf")} />
                     <button className="btn" type="submit">Enviar</button>
                 </form>
             </div>

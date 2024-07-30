@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function CadProdutos() {
+    const [formData, setFormData] = useState();
+    const [imageURL, setImageURL] = useState();
+    const { register, handleSubmit, reset } = useForm();
 
-    const { register, handleSubmit } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        setFormData({
+            name: data.name,
+            quant: data.quant,
+            uni: data.uni,
+            total: data.total,
+            ImageURL: imageURL
+        });
+        reset();
+    };
 
-    const onSubmit = (e) => {
-        console.log(e);
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            setImageURL(url);
+        };
     };
 
     return (
@@ -15,33 +32,62 @@ export default function CadProdutos() {
             <div className="hsection">
                 <h2>Cadastro</h2>
             </div>
-            <div class="container">
-                <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
-                    <label>
-                        Nome do produto:
-                        <input type="text" {...register("name")} />
-                    </label>
-                    <label>
-                        Foto do produto:
-                        <img src="" alt="" {...register("imgProd")} />
-                        <input type="text" />
-                    </label>
-                    <label>
-                        quantidade:
-                        <input type="number" {...register("quant")} />
-                    </label>
-                    <label>
-                        Preço unitário:
-                        <input type="number" {...register("uni")} />
-                    </label>
-                    <label>
-                        Preço total:
-                        <input type="number" {...register("total")} />
-                    </label>
-                    <button className="btn" type="submit">Enviar</button>
-                </form>
-            </div>
-            <a href="/"><IoMdArrowRoundBack /></a>
+            <section id="produtos">
+                <div className="row">
+                    <nav className="nav nav-pills flex-column col-lg-2">
+                        <button data-bs-toggle="tab" data-bs-target="#aba1" className="nav-link active" type="button">Cadastro</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba2" className="nav-link" type="button">Produtos Cadastrados</button>
+                    </nav>
+                    <div className="tab-content col-lg-10">
+                        <div className="tab-pane active" id="aba1">
+                            <div className="container">
+                                <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
+                                    <label>
+                                        Nome do produto:
+                                    </label>
+                                    <input type="text" {...register("name")} />
+                                    <label>
+                                        Foto do produto:
+                                    </label>
+                                    <input type="file" accept="image/png, image/jpeg"  onChange={handleImageChange} />
+                                    <label>
+                                        quantidade:
+                                    </label>
+                                    <input type="number" {...register("quant")} />
+                                    <label>
+                                        Preço unitário:
+                                    </label>
+                                    <input type="number" {...register("uni")} />
+                                    <label>
+                                        Preço total:
+                                    </label>
+                                    <input type="number" {...register("total")} />
+                                    <button className="btn" type="submit">Enviar</button>
+                                </form>
+                            </div>
+                            <a href="/"><IoMdArrowRoundBack /></a>
+                        </div>
+                        <div className="tab-pane" id="aba2">
+                            {formData ? (
+                                <div>
+                                    <h3>Produtos cadastrados</h3>
+                                    <p>Nome: {formData.name}</p>
+                                    <p>Quantidade: {formData.quant}</p>
+                                    <p>Preço Unitário: {formData.uni}</p>
+                                    <p>Preço Total: {formData.total}</p>
+                                    {imageURL && (
+                                        <div>
+                                            <img src={imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <p>Nenhum produto cadastrado</p>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

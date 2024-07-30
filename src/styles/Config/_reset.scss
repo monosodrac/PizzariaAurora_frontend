@@ -12,8 +12,11 @@ html {
 }
 
 .container {
-    margin: 0 5.6vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ul {
+        margin: 0;
+    }
 }
