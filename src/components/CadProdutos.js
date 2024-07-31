@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function CadProdutos() {
     const [products, setProducts] = useState([]);
@@ -89,7 +88,6 @@ export default function CadProdutos() {
                         </div>
                     </div>
                 </div>
-                <a href="/"><IoMdArrowRoundBack /></a>
             </section>
         </div>
     );

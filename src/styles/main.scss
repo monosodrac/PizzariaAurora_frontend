@@ -160,6 +160,16 @@ button {
   cursor: pointer;
 }
 
+.btn {
+  border: none;
+
+  &:hover {
+  background-color: variaveis.$corSecundaria;
+  color: variaveis.$corPrincipal;
+  box-shadow: none;
+  }
+}
+
 .btn__login {
   position: fixed;
   bottom: 5rem;

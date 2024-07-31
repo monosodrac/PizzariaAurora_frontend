@@ -1,11 +1,11 @@
 import React from 'react';
 
 import NaoAutenticados from './NaoAutenticados.routes';
-import Autenticados from './Autenticados.routes';
+import Autenticados from './Autenticados';
 
 export default function Rotas() {
 
-    const autenticado = false;
+    const autenticado = true;
 
     return (
         <>

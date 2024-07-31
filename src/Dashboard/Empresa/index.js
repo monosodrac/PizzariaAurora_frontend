@@ -1,9 +1,10 @@
 import React from "react";
+import CadProdutos from "../../Components/CadProdutos";
 
 export default function DashBoardEmpresa() {
     return(
         <div>
-            <h1>DashBoard Empresa</h1>
+            <CadProdutos />
         </div>
     );
 };

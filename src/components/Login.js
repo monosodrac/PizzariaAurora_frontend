@@ -36,7 +36,7 @@ export default function Login() {
                         <a href="/cadastro-cliente">Cadastre-se</a>
                         <a href='/'>Esqueci minha senha</a>
                     </div>
-                    <button type="submit">Fazer Login</button>
+                    <button className="btn" type="submit">Fazer Login</button>
                 </form>
             </div>
         </div>
