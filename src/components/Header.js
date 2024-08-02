@@ -2,30 +2,33 @@ import React from 'react';
 import Logo from '../Imgs/logo.png';
 
 export default function Header() {
-    return(
+    return (
         <div>
-            <header id='head'>
+            <header className="navbar navbar-expand-lg sticky-top p-4" id='head'>
                 <div className="container">
-                    <img src={Logo} alt="Pizzaria Aurora" />
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href='#dest'>
+                    <img className="navbar-brand m-0 section-title" src={Logo} alt="Pizzaria Aurora" />
+                    <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <nav className="navbar-collapse collapse animation justify-content-end" id="menu-navegacao">
+                        <ul className="nav nav-pills d-block d-md-flex">
+                            <li className="nav-item fw-bold">
+                                <a href='#dest' className="nav-link">
                                     Destaques
                                 </a>
                             </li>
-                            <li>
-                                <a href='#spc'>
+                            <li className="nav-item fw-bold">
+                                <a href='#spc' className="nav-link">
                                     Espaço
                                 </a>
                             </li>
-                            <li>
-                                <a href='#dlvr'>
+                            <li className="nav-item fw-bold">
+                                <a href='#dlvr' className="nav-link">
                                     Delivery
                                 </a>
                             </li>
-                            <li>
-                                <a href='#cont'>
+                            <li className="nav-item fw-bold">
+                                <a href='#cont' className="nav-link">
                                     Contato
                                 </a>
                             </li>

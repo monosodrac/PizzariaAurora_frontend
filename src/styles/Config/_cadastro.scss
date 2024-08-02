@@ -124,7 +124,28 @@
     }
 }
 
-.product-item {
-    border-bottom: 1px solid black;
-    margin: 1rem 0;
+#aba2 {
+    h3 {
+        font-weight: bold;
+        font-size: 48px;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid black;
+        color: variaveis.$corTitle;
+    }
+
+    .product-item {
+        margin: 3rem 0;
+
+        p {
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            margin: .1rem 0;
+            
+            b {
+                font-family: sans-serif;
+
+            }
+        }
+    }
 }

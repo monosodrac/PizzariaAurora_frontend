@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 export default function CadProdutos() {
     const [products, setProducts] = useState([]);
-    const [imageURL, setImageURL] = useState(null);
+    const [imageURL, setImageURL] = useState();
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
@@ -16,7 +16,7 @@ export default function CadProdutos() {
         };
         setProducts([...products, newProduct]);
         reset();
-        setImageURL(null);
+        setImageURL();
     };
 
     const handleImageChange = (e) => {
@@ -76,10 +76,10 @@ export default function CadProdutos() {
                                                 <img src={product.imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
                                             </div>
                                         )}
-                                        <p>Nome: {product.name}</p>
-                                        <p>Quantidade: {product.quant}</p>
-                                        <p>Preço Unitário: {product.uni}</p>
-                                        <p>Preço Total: {product.total}</p>
+                                        <p><b>Nome:</b> {product.name}</p>
+                                        <p><b>Quantidade:</b> {product.quant}</p>
+                                        <p><b>Preço Unitário:</b> {product.uni}</p>
+                                        <p><b>Preço Total:</b> {product.total}</p>
                                     </div>
                                 ))
                             ) : (
