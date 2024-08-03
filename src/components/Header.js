@@ -32,6 +32,11 @@ export default function Header() {
                                     Contato
                                 </a>
                             </li>
+                            <li className="nav-item fw-bold" id='log'>
+                                <a href="#" className="nav-link">
+                                    Login
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

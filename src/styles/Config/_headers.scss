@@ -16,22 +16,39 @@ header {
         a {
             text-decoration: none;
             color: variaveis.$corSecundaria;
+            
+        }
+    }
+
+    #log {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        background-color: variaveis.$corPrincipal;
+        width: 100%;
+    
+        img {
+            height: 45px;
+            width: 60px;
+        }    
+    
+        #log {
+            display: block;
         }
     }
 }
 
-@mixin headSection() {
-    display: block;
-    width: 100%;
+.hsection {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     background-color: variaveis.$corPrincipal;
     color: variaveis.$corSecundaria;
-    text-align: center;
     padding: 1.5rem;
-}
 
-.hsection {
-    @include headSection();
-    
     .hsection h2 {
         font-size: 2.6rem;
     }
