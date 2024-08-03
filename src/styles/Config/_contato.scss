@@ -1,0 +1,41 @@
+@use 'variaveis';
+
+
+.contato {
+    background-color: variaveis.$corPrincipal;
+    
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+        font-size: 2rem;
+        color: #fff;
+        align-items: center;
+        margin: 5rem 0;
+        
+        img {
+            height: 17.7rem;
+        }
+
+        .maps {
+            iframe {
+                margin-bottom: 5.6vw;
+                height: 17.7rem;
+                width: 17.7rem;
+                position: relative;
+            }
+        }
+
+        .rodape {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            border-top: 1px solid #fff;
+            
+            h2 {
+                margin-top: 1.5rem;
+                text-align: center;
+                font-size: 1rem;
+            }
+        }
+    }
+}

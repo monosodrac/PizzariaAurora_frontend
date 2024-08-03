@@ -1,0 +1,20 @@
+@use 'variaveis';
+
+.delivery {
+    display: flex;
+    margin: 5rem;
+    
+    img {
+        height: 19rem;
+    }
+    
+    &__text {
+        font-size: 1.5rem;
+        font-family: variaveis.$fontDlvr;
+        
+        h4 {
+            font-size: 3rem;
+            color: variaveis.$corPrincipal;
+        }
+    }
+}

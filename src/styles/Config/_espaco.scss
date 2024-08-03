@@ -1,0 +1,28 @@
+@use 'variaveis';
+
+.espaco {
+    display: block;
+    
+    &__list {
+        list-style: none;
+        
+        &__item img {
+            width: 100%;
+
+        }
+
+        #img1 {
+            margin: 5rem 0 2rem;
+        }
+
+        #img5 {
+            margin: 2rem 0 5rem;
+        }
+    }
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}

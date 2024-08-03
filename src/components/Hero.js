@@ -1,12 +1,13 @@
 import React from "react";
+import BgHero from "../Imgs/bg-hero.png";
 import BtnHero from "../Imgs/btn-hero.png";
 
 export default function Hero() {
   return (
     <div>
-      <section className="image-text-section">
-        <div></div>
-        <div className="image-text-section__text_container">
+      <section className="image-text-section image-text-section--image-full-width">
+        <img src={BgHero} alt="Imagem promocional" />
+        <div className="image-text-section__text_container image-text-section--image-full-width__text_container">
           <h2 className="title">
             Renovamos a tradição <br />
             de fazer a melhor pizza!

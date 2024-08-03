@@ -4,7 +4,7 @@ import Logo from '../Imgs/logo.png';
 export default function Header() {
     return (
         <div>
-            <header className="navbar navbar-expand-lg sticky-top p-4" id='head'>
+            <header className="navbar navbar-expand-lg sticky-top" id='head'>
                 <div className="container">
                     <img className="navbar-brand m-0 section-title" src={Logo} alt="Pizzaria Aurora" />
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">

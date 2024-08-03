@@ -1,0 +1,16 @@
+@use 'variaveis';
+
+.destaques__list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    
+    &__item {
+        list-style: none;
+        margin: 4rem 0;
+        
+        img {
+            max-width: 100%;
+        }
+    }
+}
