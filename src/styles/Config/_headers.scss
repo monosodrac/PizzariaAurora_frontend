@@ -5,8 +5,8 @@ header {
     width: 100%;
 
     img {
-        height: 90px;
-        width: 120px;
+        height: 4.25rem;
+        width: 5.6rem;
     }
     
     li {
@@ -25,18 +25,14 @@ header {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     header {
         background-color: variaveis.$corPrincipal;
         width: 100%;
-    
-        img {
-            height: 45px;
-            width: 60px;
-        }    
-    
+        
         #log {
             display: block;
+            cursor: pointer;
         }
     }
 }

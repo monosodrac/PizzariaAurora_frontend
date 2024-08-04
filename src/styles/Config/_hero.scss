@@ -1,11 +1,18 @@
 @use 'variaveis';
 
 .image-text-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 
     &__text_container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        margin: 1rem;
+
         h2 {
             margin-bottom: 1.5rem;
         } 
@@ -17,9 +24,10 @@
     &--image-full-width {
         display: block;
         position: relative;
-
+        
         img {
             width: 100%;
+            height: auto;
         }
 
         &__text_container {
@@ -61,8 +69,6 @@
 @media (max-width: 1200px) {
     .image-text-section {
         &__text_container {
-            margin: 1rem;
-
             h2 {
                 font-size: 2rem;
             }
@@ -81,12 +87,6 @@
 @media (max-width: 767px) {
     .image-text-section {
         &__text_container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-right: 40px;
-    
             h2 {
                 font-size: 1.1rem;
                 margin: 1rem;
@@ -103,7 +103,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 511px) {
     .image-text-section {
         &__text_container {
             display: none;

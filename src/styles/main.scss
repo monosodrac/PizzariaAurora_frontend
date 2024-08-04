@@ -8,13 +8,6 @@
 @use 'config/contato';
 @use 'config/cadastro';
 
-button {
-  border: 0;
-  padding: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
 .btn {
   border: none;
 
@@ -56,5 +49,17 @@ button {
   
   &:hover {
     transform: scale(1.2);
+  }
+}
+
+@media (max-width: 991px) {
+  .btn__login {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn__up {
+    display: none;
   }
 }
