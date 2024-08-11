@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Inicio from '../Inicio';
 import Login from '../Components/Login';
 import CadCliente from '../Components/CadCliente';
-import Cardapio from '../Cardapio/index';
+import Maintenance from '../Maintenance/index';
 
 export default function NaoAutenticados() {
     return (
@@ -13,7 +13,7 @@ export default function NaoAutenticados() {
 
                 <Route path='/login' element={<Login />} />
                 <Route path='/cadastro-cliente' element={<CadCliente />} />
-                <Route path='/cardapio' element={<Cardapio />} />
+                <Route path='/maintenance' element={<Maintenance />} />
 
                 <Route path='*' element={<Inicio />} />
             </Routes>

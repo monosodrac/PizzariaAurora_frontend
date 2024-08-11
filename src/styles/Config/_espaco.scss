@@ -8,9 +8,8 @@
         
         &__item img {
             width: 100%;
-
         }
-
+        
         #img1 {
             margin: 5rem 0 2rem;
         }
@@ -25,4 +24,27 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+}
+
+@media (max-width: 767px) {
+    .espaco {
+        &__list {
+            #img1 {
+                margin: 5rem 0 1rem;
+            }
+    
+            #img5 {
+                margin: 1rem 0 5rem;
+            }
+        }
+    }
+    
+    .grid-3 {
+        display: block;
+
+        .espaco__list__item img {
+            margin: 1rem 0;
+            width: 100%;
+        }
+    }
 }

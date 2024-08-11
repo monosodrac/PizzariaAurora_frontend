@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function Login() {
 
@@ -34,11 +35,12 @@ export default function Login() {
                     <input type="password" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <div className="cad-res">
                         <a href="/cadastro-cliente">Cadastre-se</a>
-                        <a href='/'>Esqueci minha senha</a>
+                        <a href='/maintenance'>Esqueci minha senha</a>
                     </div>
                     <button className="btn" type="submit">Fazer Login</button>
                 </form>
             </div>
+            <a href="/" className="back"><IoMdArrowRoundBack /></a>
         </div>
     );
 };

@@ -1,11 +1,15 @@
 @use 'variaveis';
 
 .delivery {
-    display: flex;
     margin: 5rem;
     
-    img {
-        height: 19rem;
+    .container {
+        justify-content: space-around;
+        
+        img {
+            width: 19rem;
+        }
+        
     }
     
     &__text {
@@ -15,6 +19,29 @@
         h4 {
             font-size: 3rem;
             color: variaveis.$corPrincipal;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .delivery {
+        margin: 5rem;
+        
+        .container {
+            display: block;
+            
+            img {
+                width: auto;
+                max-width: 100%;
+            }
+
+            &__text {
+                font-size: .5rem;
+                
+                h4 {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }

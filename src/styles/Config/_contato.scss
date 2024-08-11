@@ -1,6 +1,5 @@
 @use 'variaveis';
 
-
 .contato {
     background-color: variaveis.$corPrincipal;
     
@@ -16,9 +15,10 @@
         img {
             height: 17.7rem;
         }
-
+        
         .maps {
             iframe {
+                max-width: 100%;
                 margin-bottom: 5.6vw;
                 height: 17.7rem;
                 width: 17.7rem;
@@ -35,6 +35,47 @@
                 margin-top: 1.5rem;
                 text-align: center;
                 font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .contato {
+        background-color: variaveis.$corPrincipal;
+
+        &__list {
+            display: block;
+            max-width: 80%;
+            font-size: 2rem;
+            color: #fff;
+            margin: 5rem auto;
+
+            img {
+                height: 80%;
+                width: auto;
+                max-width: 100%;
+            }
+
+            p {
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .maps {
+                display: none;
+            }
+
+            .rodape {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                border-top: 1px solid #fff;
+
+                h2 {
+                    margin-top: 1.5rem;
+                    text-align: center;
+                    font-size: 1rem;
+                }
             }
         }
     }

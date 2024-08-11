@@ -13,17 +13,17 @@ export default function Destaques() {
         <div className="container">
           <ul className="destaques__list">
             <li className="destaques__list__item">
-              <a href="/cardapio">
+              <a href="/maintenance">
                 <img src={ImgCard} alt="Anúncio Cardápio" />
               </a>
             </li>
             <li className="destaques__list__item">
-              <a href="/cardapio">
+              <a href="/maintenance">
                 <img src={ImgRod} alt="Anúncio Rodízio" />
               </a>
             </li>
             <li className="destaques__list__item">
-              <a href="/cardapio">
+              <a href="/maintenance">
                 <img src={ImgProm} alt="Anúncio Promoções" />
               </a>
             </li>

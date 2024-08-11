@@ -73,6 +73,23 @@
             font-size: 1.5rem;
         }
     }
+
+    .back {
+        display: block;
+        margin: 2.8vw;
+        color: variaveis.$corSecundaria;
+        font-size: 4rem;
+    
+        svg {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+    
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 }
 
 .cadastro {

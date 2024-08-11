@@ -14,3 +14,18 @@
         }
     }
 }
+
+@media (max-width: 991px) {
+    .destaques__list {
+        display: block;
+
+        &__item {
+            list-style: none;
+            margin: 4rem;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+    }    
+}
