@@ -5,7 +5,7 @@ import AutEmpresa from './AutEmpresa.routes';
 
 export default function Autenticados() {
 
-    const AutEmp = true;
+    const AutEmp = false;
 
     return (
         <>

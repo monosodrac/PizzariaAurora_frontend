@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="text">
             Alta qualidade nos ingredientes, tradição no preparo, inovação e talento na criação de sabores únicos.
           </p>
-          <a href="/maintenance" className="btn-hero">
+          <a href="/cardapio" className="btn-hero">
             <img src={BtnHero} alt="Veja nosso cadápio" />
           </a>
         </div>
