@@ -10,7 +10,6 @@ Este projeto foi criado com o objetivo de aplicar e aprofundar os conhecimentos 
 - **React Hook Form**: Para gerenciamento de formulários.
 - **React Icons**: Ícones para a interface do usuário.
 - **React Iframe**: Integração de conteúdo em iframes.
-- **React Modal**: Componente para modais na aplicação.
 - **React Router Dom**: Para navegação dentro da aplicação.
 - **Sass**: Pré-processador CSS para estilização avançada.
 - **API de Busca de CEPs**: Integração para oferecer funcionalidades de localização baseadas em CEP.
