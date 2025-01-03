@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from 'react'
+import { AutenticadoContexto } from '../Contexts/authContexts'
+import { toast } from 'react-toastify'
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function Login() {
+    const { loginEntrada, verificarToken } = useContext(AutenticadoContexto)
 
-    const [usuario, setUsuario] = useState();
-    const [senha, setSenha] = useState();
+    verificarToken();
+    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    function logarUsuarios(e) {
-        e.preventDefault();
-
-        if (!usuario || !senha) {
-            alert('Campos em Branco');
-            return;
+    async function dadosLogin(e) {
+        e.preventDefault()
+        if (!email || !password) {
+            toast.warning('Preencha todos os campos')
+            return
         }
-
-        if (usuario === 'cliente@gmail.com' && senha === '666') {
-            alert('Login cliente efetuado com sucesso');
-        } else if (usuario === 'empresa@gmail.com' && senha === '666') {
-            alert('Login empresa efetuado com sucesso');
-        } else {
-            alert('Usuario/Senha incorretos');
-            return;
-        };
-    };
+        try {
+            await loginEntrada(email, password)
+        } catch (err) {
+            
+        }
+    }
 
     return (
         <div className="login">
@@ -30,9 +30,20 @@ export default function Login() {
                 <h2>Login</h2>
             </div>
             <div className="container">
-                <form onSubmit={logarUsuarios}>
-                    <input type="email" autoFocus placeholder="E-mail" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
-                    <input type="password" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <form onSubmit={dadosLogin}>
+                    <input
+                        type="email"
+                        autoFocus
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                     <div className="cad-res">
                         <a href="/cadastro-cliente">Cadastre-se</a>
                         <a href='/maintenance'>Esqueci minha senha</a>
