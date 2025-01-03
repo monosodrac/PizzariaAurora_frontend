@@ -5,7 +5,7 @@ import Cardapio from '../Cardapio/Autenticado/index';
 import Pedido from '../Components/Pedido';
 import PedConf from '../Components/PedConf';
 
-export default function AutCliente() {
+export default function Autenticados() {
     return (
         <>
             <BrowserRouter>
@@ -15,8 +15,6 @@ export default function AutCliente() {
                     <Route path='/cardapio' element={<Cardapio />} />
                     <Route path='/pedido' element={<Pedido />} />
                     <Route path='/pedido-confirmado' element={<PedConf />} />
-
-
 
                     <Route path='*' element={<DashBoardCliente />} />
                 </Routes>
