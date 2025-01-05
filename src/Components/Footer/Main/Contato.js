@@ -1,5 +1,5 @@
 import React from "react";
-import ImgLogo from '../Imgs/logo.png';
+import ImgLogo from '../../../Styles/Imgs/logo.png';
 import Iframe from "react-iframe";
 
 export default function Contato() {

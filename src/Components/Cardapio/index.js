@@ -1,13 +1,13 @@
 import React from "react";
 
-import Pizza1 from "../../Imgs/pizza1-1.jpg";
-import Pizza2 from "../../Imgs/pizza1-2.jpg";
-import Pizza3 from "../../Imgs/pizza2-1.jpg";
-import Pizza4 from "../../Imgs/pizza2-2.jpg";
-import Beb1 from "../../Imgs/beb1.jpg";
-import Beb2 from "../../Imgs/beb2.jpg";
+import Pizza1 from "../../Styles/Imgs/pizza1-1.jpg";
+import Pizza2 from "../../Styles/Imgs/pizza1-2.jpg";
+import Pizza3 from "../../Styles/Imgs/pizza2-1.jpg";
+import Pizza4 from "../../Styles/Imgs/pizza2-2.jpg";
+import Beb1 from "../../Styles/Imgs/beb1.jpg";
+import Beb2 from "../../Styles/Imgs/beb2.jpg";
 
-export default function CardapioNaoAut() {
+export default function Cardapio() {
     return (
         <div>
             <div className="hsection" id="cont">
@@ -87,3 +87,16 @@ export default function CardapioNaoAut() {
         </div>
     );
 };
+
+
+// {products().map((item, index) => (
+//     <a href={item.link}>
+//         <div className="" key={index}>
+//             <img class="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
+//             <h5 class="text-colored fw-bold mt-2">{item.nome}</h5>
+//             <p>
+//                 {item.descricao}
+//             </p>
+//         </div>
+//     </a>
+// ))}

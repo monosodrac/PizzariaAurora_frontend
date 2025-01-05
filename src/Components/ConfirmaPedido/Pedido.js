@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-import Pizza from "../Imgs/pizza1-1.jpg";
+import Pizza from "../../Styles/Imgs/pizza1-1.jpg";
 
 export default function Pedido() {
     const navigate = useNavigate();

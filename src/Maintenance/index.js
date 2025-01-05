@@ -1,5 +1,5 @@
 import React from "react";
-import Builder from '../Imgs/pixel-art-12601_256.gif';
+import Builder from '../Styles/Imgs/pixel-art-12601_256.gif';
 
 export default function Maintenance() {
     return (

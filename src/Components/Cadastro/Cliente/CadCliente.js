@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import apiLocal from './../Api/apiLocal';
+import apiLocal from '../../../Api/apiLocal';
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function CadCliente() {

@@ -1,10 +1,13 @@
 import React from "react";
-import Cardapio from "../../Cardapio/Autenticado/index";
+
+import Inicio from "../../Inicio/Autenticado";
+// import Cardapio from "../../Components/Cardapio/index";
 
 export default function DashBoardEmpresa() {
     return(
         <div>
-            <Cardapio />
+            <Inicio />
+            {/* <Cardapio /> */}
         </div>
     );
 };

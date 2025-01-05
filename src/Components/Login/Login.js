@@ -1,28 +1,27 @@
-import React, { useContext, useState } from 'react'
-import { AutenticadoContexto } from '../Contexts/authContexts'
-import { toast } from 'react-toastify'
+import React, { useContext, useState } from 'react';
+import { AutenticadoContexto } from '../../Contexts/authContexts';
+import { toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function Login() {
-    const { loginEntrada, verificarToken } = useContext(AutenticadoContexto)
-
+    const { loginEntrada, verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
     
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     async function dadosLogin(e) {
         e.preventDefault()
         if (!email || !password) {
-            toast.warning('Preencha todos os campos')
-            return
-        }
+            toast.warning('Preencha todos os campos');
+            return;
+        };
         try {
-            await loginEntrada(email, password)
+            await loginEntrada(email, password);
         } catch (err) {
             
-        }
-    }
+        };
+    };
 
     return (
         <div className="login">
