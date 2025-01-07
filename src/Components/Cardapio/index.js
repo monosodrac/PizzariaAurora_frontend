@@ -1,11 +1,5 @@
 import React from "react";
-
-import Pizza1 from "../../Styles/Imgs/pizza1-1.jpg";
-import Pizza2 from "../../Styles/Imgs/pizza1-2.jpg";
-import Pizza3 from "../../Styles/Imgs/pizza2-1.jpg";
-import Pizza4 from "../../Styles/Imgs/pizza2-2.jpg";
-import Beb1 from "../../Styles/Imgs/beb1.jpg";
-import Beb2 from "../../Styles/Imgs/beb2.jpg";
+import { salgadas, doces, bebidas } from "../../Assets/assets";
 
 export default function Cardapio() {
     return (
@@ -27,56 +21,56 @@ export default function Cardapio() {
                             <div class="tab-content">
                                 <div class="tab-pane active" id="salg">
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Pizza1} alt="Pizza de Frango com Bacon" />
-                                                <h5 class="text-colored fw-bold mt-2">Pizza de Frango com Bacon</h5>
-                                                <p>
-                                                    Frango, Bacon, Milho, e Azeitona.
-                                                </p>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Pizza2} alt="Pizza de Mussarela" />
-                                                <h5 class="text-colored fw-bold mt-2">Pizza de Mussarela</h5>
-                                                <p>
-                                                    Mussarela, Tomate, Cebola, e Azeitona.
-                                                </p>
-                                            </a>
-                                        </div>
+                                        {salgadas.map((item, index) => (
+                                            <div class="col-md-3 coluna">
+                                                <a href="/pedido">
+                                                    <div className="" key={index}>
+                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
+                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
+                                                        <p>
+                                                            {item.descricao}
+                                                        </p>
+                                                        <p>
+                                                            {item.preco}
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="doces">
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Pizza3} alt="Pizza de Chocolate com Morango" />
-                                                <h5 class="text-colored fw-bold mt-2">Pizza de Chocolate com Morango</h5>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Pizza4} alt="Pizza de M&M" />
-                                                <h5 class="text-colored fw-bold mt-2">Pizza de M&M</h5>
-                                            </a>
-                                        </div>
+                                        {doces.map((item, index) => (
+                                            <div class="col-md-3 coluna">
+                                                <a href="/pedido">
+                                                    <div className="" key={index}>
+                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
+                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
+                                                        <p>
+                                                            {item.preco}
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="bebs">
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Beb1} alt="Coca Cola" />
-                                                <h5 class="text-colored fw-bold mt-2">Coca Cola</h5>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="/login">
-                                                <img class="d-block w-100" src={Beb2} alt="Água sem gás" />
-                                                <h5 class="text-colored fw-bold mt-2">Água sem gás</h5>
-                                            </a>
-                                        </div>
+                                        {bebidas.map((item, index) => (
+                                            <div class="col-md-3 coluna">
+                                                <a href="/pedido">
+                                                    <div className="" key={index}>
+                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
+                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
+                                                        <p>
+                                                            {item.preco}
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -87,16 +81,3 @@ export default function Cardapio() {
         </div>
     );
 };
-
-
-// {products().map((item, index) => (
-//     <a href={item.link}>
-//         <div className="" key={index}>
-//             <img class="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
-//             <h5 class="text-colored fw-bold mt-2">{item.nome}</h5>
-//             <p>
-//                 {item.descricao}
-//             </p>
-//         </div>
-//     </a>
-// ))}

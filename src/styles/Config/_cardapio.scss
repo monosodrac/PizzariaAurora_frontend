@@ -12,6 +12,13 @@
             p {
                 color: variaveis.$corSecundaria;
             }
+
+        }
+
+        .coluna {
+            &:hover {
+                background-color: red;
+            }
         }
     }
 }

@@ -20,8 +20,8 @@ export default function UserProfile() {
                 });
                 console.log('Resposta da API:', resposta);
                 // Verificar se resposta.data é um array antes de atribuir
-                if (Array.isArray(resposta.data.nome)) {
-                    setDadosUsuarios(resposta.data.nome);
+                if (Array.isArray(resposta.data)) {
+                    setDadosUsuarios(resposta.data);
                 } else {
                     setDadosUsuarios([]); // Caso não seja um array, defina como array vazio
                     toast.error('Dados inválidos retornados da API', {
@@ -86,7 +86,7 @@ export default function UserProfile() {
             )}
         </>
     );
-}
+};
 
 
 

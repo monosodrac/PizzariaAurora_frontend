@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 export default function CadProdutos() {
     const [products, setProducts] = useState([]);
     const [imageURL, setImageURL] = useState();
-    const { register, handleSubmit, reset } = useForm();
+    // const { register, handleSubmit, reset } = useForm();
 
-    const onSubmit = (data) => {
-        const newProduct = {
-            name: data.name,
-            quant: data.quant,
-            uni: data.uni,
-            total: data.total,
-            imageURL: imageURL
-        };
-        setProducts([...products, newProduct]);
-        reset();
-        setImageURL();
-    };
+    // const onSubmit = (data) => {
+    //     const newProduct = {
+    //         name: data.name,
+    //         quant: data.quant,
+    //         uni: data.uni,
+    //         total: data.total,
+    //         imageURL: imageURL
+    //     };
+    //     setProducts([...products, newProduct]);
+    //     reset();
+    //     setImageURL();
+    // };
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const url = URL.createObjectURL(file);
-            setImageURL(url);
-        };
-    };
+    // const handleImageChange = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file) {
+    //         const url = URL.createObjectURL(file);
+    //         setImageURL(url);
+    //     };
+    // };
 
     return (
         <div className="cadastro">
@@ -41,7 +41,7 @@ export default function CadProdutos() {
                     <div className="tab-content col-lg-10">
                         <div className="tab-pane active" id="aba1">
                             <div className="container">
-                                <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
+                                {/* <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
                                     <label>
                                         Nome do produto:
                                     </label>
@@ -63,7 +63,7 @@ export default function CadProdutos() {
                                     </label>
                                     <input type="number" {...register("total")} />
                                     <button className="btn" type="submit">Enviar</button>
-                                </form>
+                                </form> */}
                             </div>
                         </div>
                         <div className="tab-pane" id="aba2">
