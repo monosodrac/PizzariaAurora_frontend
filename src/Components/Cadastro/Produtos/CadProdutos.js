@@ -1,31 +1,49 @@
 import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
 
 export default function CadProdutos() {
     const [products, setProducts] = useState([]);
     const [imageURL, setImageURL] = useState();
-    // const { register, handleSubmit, reset } = useForm();
+    const [formData, setFormData] = useState({
+        name: "",
+        quant: "",
+        uni: "",
+        total: ""
+    });
 
-    // const onSubmit = (data) => {
-    //     const newProduct = {
-    //         name: data.name,
-    //         quant: data.quant,
-    //         uni: data.uni,
-    //         total: data.total,
-    //         imageURL: imageURL
-    //     };
-    //     setProducts([...products, newProduct]);
-    //     reset();
-    //     setImageURL();
-    // };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
 
-    // const handleImageChange = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         const url = URL.createObjectURL(file);
-    //         setImageURL(url);
-    //     };
-    // };
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const newProduct = {
+            name: formData.name,
+            quant: formData.quant,
+            uni: formData.uni,
+            total: formData.total,
+            imageURL: imageURL
+        };
+        setProducts([...products, newProduct]);
+        setFormData({
+            name: "",
+            quant: "",
+            uni: "",
+            total: ""
+        });
+        setImageURL(null);
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            setImageURL(url);
+        }
+    };
 
     return (
         <div className="cadastro">
@@ -41,29 +59,53 @@ export default function CadProdutos() {
                     <div className="tab-content col-lg-10">
                         <div className="tab-pane active" id="aba1">
                             <div className="container">
-                                {/* <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
+                                <form className="form__Prod" onSubmit={onSubmit}>
                                     <label>
                                         Nome do produto:
                                     </label>
-                                    <input type="text" {...register("name")} />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                    />
                                     <label>
                                         Foto do produto:
                                     </label>
-                                    <input type="file" accept="image/png, image/jpeg"  onChange={handleImageChange} />
+                                    <input
+                                        type="file"
+                                        accept="image/png, image/jpeg"
+                                        onChange={handleImageChange}
+                                    />
                                     <label>
-                                        quantidade:
+                                        Quantidade:
                                     </label>
-                                    <input type="number" {...register("quant")} />
+                                    <input
+                                        type="number"
+                                        name="quant"
+                                        value={formData.quant}
+                                        onChange={handleChange}
+                                    />
                                     <label>
                                         Preço unitário:
                                     </label>
-                                    <input type="number" {...register("uni")} />
+                                    <input
+                                        type="number"
+                                        name="uni"
+                                        value={formData.uni}
+                                        onChange={handleChange}
+                                    />
                                     <label>
                                         Preço total:
                                     </label>
-                                    <input type="number" {...register("total")} />
+                                    <input
+                                        type="number"
+                                        name="total"
+                                        value={formData.total}
+                                        onChange={handleChange}
+                                    />
                                     <button className="btn" type="submit">Enviar</button>
-                                </form> */}
+                                </form>
                             </div>
                         </div>
                         <div className="tab-pane" id="aba2">
@@ -73,7 +115,7 @@ export default function CadProdutos() {
                                     <div key={index} className="product-item">
                                         {product.imageURL && (
                                             <div>
-                                                <img src={product.imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
+                                                <img src={product.imageURL} alt="Produto" style={{ maxWidth: "300px", maxHeight: "300px" }} />
                                             </div>
                                         )}
                                         <p><b>Nome:</b> {product.name}</p>
@@ -92,3 +134,101 @@ export default function CadProdutos() {
         </div>
     );
 };
+
+
+
+
+// import React, { useState } from "react";
+// import { useForm } from "react-hook-form";
+
+// export default function CadProdutos() {
+//     const [products, setProducts] = useState([]);
+//     const [imageURL, setImageURL] = useState();
+//     const { register, handleSubmit, reset } = useForm();
+
+//     const onSubmit = (data) => {
+//         const newProduct = {
+//             name: data.name,
+//             quant: data.quant,
+//             uni: data.uni,
+//             total: data.total,
+//             imageURL: imageURL
+//         };
+//         setProducts([...products, newProduct]);
+//         reset();
+//         setImageURL();
+//     };
+
+//     const handleImageChange = (e) => {
+//         const file = e.target.files[0];
+//         if (file) {
+//             const url = URL.createObjectURL(file);
+//             setImageURL(url);
+//         };
+//     };
+
+//     return (
+//         <div className="cadastro">
+//             <div className="hsection">
+//                 <h2>Cadastro</h2>
+//             </div>
+//             <section id="produtos">
+//                 <div className="row">
+//                     <nav className="nav nav-pills flex-column col-lg-2 col-md-12">
+//                         <button data-bs-toggle="tab" data-bs-target="#aba1" className="nav-link active" type="button">Cadastro</button>
+//                         <button data-bs-toggle="tab" data-bs-target="#aba2" className="nav-link" type="button">Produtos Cadastrados</button>
+//                     </nav>
+//                     <div className="tab-content col-lg-10">
+//                         <div className="tab-pane active" id="aba1">
+//                             <div className="container">
+//                                 <form className="form__Prod" onSubmit={handleSubmit(onSubmit)}>
+//                                     <label>
+//                                         Nome do produto:
+//                                     </label>
+//                                     <input type="text" {...register("name")} />
+//                                     <label>
+//                                         Foto do produto:
+//                                     </label>
+//                                     <input type="file" accept="image/png, image/jpeg"  onChange={handleImageChange} />
+//                                     <label>
+//                                         quantidade:
+//                                     </label>
+//                                     <input type="number" {...register("quant")} />
+//                                     <label>
+//                                         Preço unitário:
+//                                     </label>
+//                                     <input type="number" {...register("uni")} />
+//                                     <label>
+//                                         Preço total:
+//                                     </label>
+//                                     <input type="number" {...register("total")} />
+//                                     <button className="btn" type="submit">Enviar</button>
+//                                 </form>
+//                             </div>
+//                         </div>
+//                         <div className="tab-pane" id="aba2">
+//                             <h3>Produtos cadastrados</h3>
+//                             {products.length > 0 ? (
+//                                 products.map((product, index) => (
+//                                     <div key={index} className="product-item">
+//                                         {product.imageURL && (
+//                                             <div>
+//                                                 <img src={product.imageURL} alt="Produto" style={{maxWidth: "300px", maxHeight: "300px"}} />
+//                                             </div>
+//                                         )}
+//                                         <p><b>Nome:</b> {product.name}</p>
+//                                         <p><b>Quantidade:</b> {product.quant}</p>
+//                                         <p><b>Preço Unitário:</b> {product.uni}</p>
+//                                         <p><b>Preço Total:</b> {product.total}</p>
+//                                     </div>
+//                                 ))
+//                             ) : (
+//                                 <p>Nenhum produto cadastrado</p>
+//                             )}
+//                         </div>
+//                     </div>
+//                 </div>
+//             </section>
+//         </div>
+//     );
+// };

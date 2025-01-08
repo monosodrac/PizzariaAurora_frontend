@@ -18,9 +18,65 @@ export const salgadas = [
         descricao: "Mussarela, Tomate, Cebola, e Azeitona.",
         preco: "R$45,00",
     },
+    {
+        imagem: Pizza1,
+        nome: "Pizza de Frango com Bacon",
+        descricao: "Frango, Bacon, Milho, e Azeitona.",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza2,
+        nome: "Pizza de Mussarela",
+        descricao: "Mussarela, Tomate, Cebola, e Azeitona.",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza1,
+        nome: "Pizza de Frango com Bacon",
+        descricao: "Frango, Bacon, Milho, e Azeitona.",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza2,
+        nome: "Pizza de Mussarela",
+        descricao: "Mussarela, Tomate, Cebola, e Azeitona.",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza1,
+        nome: "Pizza de Frango com Bacon",
+        descricao: "Frango, Bacon, Milho, e Azeitona.",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza2,
+        nome: "Pizza de Mussarela",
+        descricao: "Mussarela, Tomate, Cebola, e Azeitona.",
+        preco: "R$45,00",
+    },
 ]
 
 export const doces = [
+    {
+        imagem: Pizza3,
+        nome: "Pizza de Chocolate com Morango",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza4,
+        nome: "Pizza de M&M",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza3,
+        nome: "Pizza de Chocolate com Morango",
+        preco: "R$45,00",
+    },
+    {
+        imagem: Pizza4,
+        nome: "Pizza de M&M",
+        preco: "R$45,00",
+    },
     {
         imagem: Pizza3,
         nome: "Pizza de Chocolate com Morango",
@@ -43,5 +99,35 @@ export const bebidas = [
         imagem: Beb2,
         nome: "Água sem gás",
         preco: "R$15,00",
-    }
+    },
+    {
+        imagem: Beb1,
+        nome: "Coca Cola",
+        preco: "R$15,00",
+    },
+    {
+        imagem: Beb2,
+        nome: "Água sem gás",
+        preco: "R$15,00",
+    },
+    {
+        imagem: Beb1,
+        nome: "Coca Cola",
+        preco: "R$15,00",
+    },
+    {
+        imagem: Beb2,
+        nome: "Água sem gás",
+        preco: "R$15,00",
+    },
+    {
+        imagem: Beb1,
+        nome: "Coca Cola",
+        preco: "R$15,00",
+    },
+    {
+        imagem: Beb2,
+        nome: "Água sem gás",
+        preco: "R$15,00",
+    },
 ]
