@@ -1,6 +1,6 @@
-// import React, { useContext } from 'react';
-import React from 'react';
-// import { AutenticadoContexto } from '../Contexts/authContexts'
+import React, { useContext } from 'react';
+// import React from 'react';
+import { AutenticadoContexto } from '../Contexts/authContexts'
 
 import NaoAutenticados from './NaoAutenticados.routes';
 import Autenticados from './Autenticados.routes';

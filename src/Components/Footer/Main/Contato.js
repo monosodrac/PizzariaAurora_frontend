@@ -1,8 +1,11 @@
-import React from "react";
-import ImgLogo from '../../../Styles/Imgs/logo.png';
+import React, { useState } from "react";
+import Logo from '../../../Styles/Imgs/logo.png';
+import Cachorrinho from '../../../Styles/Imgs/cachorrinho.jpg';
 import Iframe from "react-iframe";
 
 export default function Contato() {
+    const [logo, setLogo] = useState(Logo);
+
     return (
         <div>
             <div className="hsection" id="cont">
@@ -11,7 +14,7 @@ export default function Contato() {
             <footer className="contato">
                 <div className="container">
                     <div className="contato__list">
-                        <img src={ImgLogo} alt="Logo da pizzaria" />
+                        <img src={logo} alt="Logo da pizzaria" onClick={() => setLogo(Cachorrinho)} />
                         <p>
                             (14) 2924-7968 <br />
                             PizzariaAurora@gmail.com <br />
