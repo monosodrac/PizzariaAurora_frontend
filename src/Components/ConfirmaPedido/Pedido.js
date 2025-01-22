@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 import Pizza from "../../Styles/Imgs/pizza1-1.jpg";
 
@@ -35,6 +36,7 @@ export default function Pedido() {
                     </div>
                 </div>
             </section>
+            <a href="/cardapio" className="back"><IoMdArrowRoundBack /></a>
         </div>
     )
 }

@@ -8,6 +8,10 @@
         }
 
         .coluna {
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 10px;
+
             &:hover {
                 background-color: variaveis.$corSecundaria;
             }

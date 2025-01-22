@@ -18,9 +18,8 @@ export default function PedidoConf() {
                         </p>
                         <p>
                             Endereço: <br />
-                            Rua Senac <br />
-                            66 <br />
-                            Vila SP <br />
+                            Rua Lorem, 66 <br />
+                            Vila Luciano <br />
                             Senac SP
                         </p>
                         <p>

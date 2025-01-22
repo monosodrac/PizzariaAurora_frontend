@@ -1,4 +1,6 @@
 import React from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 import { salgadas, doces, bebidas } from "../../Assets/assets";
 
 export default function Cardapio() {
@@ -79,6 +81,7 @@ export default function Cardapio() {
                     </div>
                 </div>
             </section>
+            <a href="/" className="back"><IoMdArrowRoundBack /></a>
         </div>
     );
 };
