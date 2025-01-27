@@ -15,10 +15,10 @@ export default function DashBoard() {
         try {
             async function consultarDadosusuarios() {
                 const resposta = await apiLocal.get('/ConsultarUsuarios', {
-                    headers: {
-                       // Authorization: 'Bearer ' + `${token}`
-                        Authorization: `Bearer ${token}`
-                    }
+                    // headers: {
+                    //    // Authorization: 'Bearer ' + `${token}`
+                    //     Authorization: `Bearer ${token}`
+                    // }
                 });
                 setDadosUsuarios(resposta.data);
             };

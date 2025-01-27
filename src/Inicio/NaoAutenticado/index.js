@@ -10,7 +10,7 @@ import Contato from "../../Components/Footer/Main/Contato";
 
 import "../../Styles/main.scss";
 
-export default function App() {
+export default function Inicio() {
     return (
         <div>
             <Header />

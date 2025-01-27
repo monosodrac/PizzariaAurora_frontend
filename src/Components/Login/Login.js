@@ -2,13 +2,15 @@ import React, { useContext, useState } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
 import { toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-    const { loginEntrada, verificarToken } = useContext(AutenticadoContexto);
-    verificarToken();
-    
+    const { loginEntrada } = useContext(AutenticadoContexto);
+   
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const nagivate = useNavigate()
 
     async function dadosLogin(e) {
         e.preventDefault()
@@ -18,6 +20,7 @@ export default function Login() {
         };
         try {
             await loginEntrada(email, password);
+            nagivate("/")
         } catch (err) {
             
         };
