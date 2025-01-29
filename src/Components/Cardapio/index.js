@@ -4,7 +4,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { salgadas, doces, bebidas } from "../../Assets/assets";
 
 export default function Cardapio() {
-
     return (
         <div>
             <div className="hsection" id="cont">
