@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { salgadas, doces, bebidas } from "../../Assets/assets";
 
 export default function Cardapio() {
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
+
     return (
         <div>
             <div className="hsection" id="cont">

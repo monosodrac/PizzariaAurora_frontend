@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 
 import { CgProfile } from "react-icons/cg";
 import { TbCircleArrowUp } from "react-icons/tb";
@@ -11,6 +12,9 @@ import Contato from "../../Components/Footer/Main/Contato";
 import "../../Styles/main.scss";
 
 export default function Inicio() {
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
+
     return (
         <div>
             <Header />

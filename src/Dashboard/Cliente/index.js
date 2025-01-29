@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 
 import { Link } from "react-router-dom";
 
@@ -11,7 +12,6 @@ import Destaques from "../../Components/Inicio/Destaques";
 import Contato from "../../Components/Footer/Main/Contato";
 
 import "../../Styles/main.scss";
-import { AutenticadoContexto } from "../../Contexts/authContexts";
 
 export default function DashBoardCliente() {
     const { verificarToken } = useContext(AutenticadoContexto);

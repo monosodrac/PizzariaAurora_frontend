@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function PedidoConf() {
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
+
     return (
         <div>
             <div className="hsection" id="dlvr">
