@@ -25,7 +25,7 @@ export default function CadCliente() {
             toast.success('Cadastro Efetuado Com Sucesso', {
                 toastId: 'ToastId'
             });
-            mudarTela('/');
+            mudarTela('/login');
         } catch (err) {
             toast.error('Erro ao Comunicar com BackEnd', {
                 toastId: 'ToastId'
