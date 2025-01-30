@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AutenticadoContexto } from "../../../Contexts/authContexts";
 import { toast } from 'react-toastify';
 import apiLocal from '../../../Api/apiLocal';
 
 export default function CadProdutos() {
+    const { verificarToken } = useContext(AutenticadoContexto);
+    verificarToken();
+
     const [nome, setNome] = useState(['']);
     const [preco, setPreco] = useState(['']);
 

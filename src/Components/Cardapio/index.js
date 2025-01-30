@@ -1,12 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AutenticadoContexto } from "../../Contexts/authContexts";
+import apiLocal from "../../Api/apiLocal";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { salgadas, doces, bebidas } from "../../Assets/assets";
 
 export default function Cardapio() {
-    const { verificarToken } = useContext(AutenticadoContexto);
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
+
+    const [dadosProdutos, setDadosProdutos] = useState(['']);
+
+    useEffect(() => {
+        try {
+            async function consultarDadosprodutos() {
+                const resposta = await apiLocal.get('/ConsultarProdutos', {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                console.log(resposta.data);
+                // setDadosProdutos(resposta.data);
+            };
+            consultarDadosprodutos();
+        } catch (err) {
+            toast.error('Erro ao Comunicar com Backend', {
+                toastId: 'ToastId'
+            });
+        };
+    }, []);
 
     return (
         <div>
