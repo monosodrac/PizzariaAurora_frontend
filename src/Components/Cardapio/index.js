@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { salgadas, doces, bebidas } from "../../Assets/assets";
+import { salgadas } from "../../Assets/assets";
 
 export default function Cardapio() {
-    const { verificarToken, token } = useContext(AutenticadoContexto);
+    const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
 
     const [dadosProdutos, setDadosProdutos] = useState(['']);
@@ -17,13 +17,9 @@ export default function Cardapio() {
     useEffect(() => {
         try {
             async function consultarDadosprodutos() {
-                const resposta = await apiLocal.get('/ConsultarProdutos', {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                console.log(resposta.data);
-                // setDadosProdutos(resposta.data);
+                const resposta = await apiLocal.get('/ConsultarProdutos');
+                // console.log(resposta.data);
+                setDadosProdutos(resposta.data);
             };
             consultarDadosprodutos();
         } catch (err) {
@@ -38,74 +34,23 @@ export default function Cardapio() {
             <div className="hsection" id="cont">
                 <h2>Cardápio</h2>
             </div>
-            <section id="cardapio" class="pt-5 pb-5">
+            <section id="cardapio" className="cardapio pt-5 pb-5">
                 <div class="container">
-                    <div class="row">
-                        <aside class="col-md-2">
-                            <nav class="nav nav-pills flex-column nav-cardapio">
-                                <button type="button" data-bs-toggle="tab" data-bs-target="#salg" class="fw-bold text-start nav-link text-colored active">Pizzas Salgadas</button>
-                                <button type="button" data-bs-toggle="tab" data-bs-target="#doces" class="fw-bold text-start nav-link text-colored">Pizzas Doces</button>
-                                <button type="button" data-bs-toggle="tab" data-bs-target="#bebs" class="fw-bold text-start nav-link text-colored">Bebidas</button>
-                            </nav>
-                        </aside>
-                        <div class="menu col-md-10">
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="salg">
-                                    <div class="row">
-                                        {salgadas.map((item, index) => (
-                                            <div class="col-md-3 coluna">
-                                                <a href="/pedido">
-                                                    <div className="" key={index}>
-                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
-                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
-                                                        <p>
-                                                            {item.descricao}
-                                                        </p>
-                                                        <p>
-                                                            {item.preco}
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        ))}
-                                    </div>
+                    <div className="cardapio__tabs">
+                    {salgadas.map((item, index) => (
+                            <a href="/pedido">
+                                <div className="cardapio__tabs__item" key={index}>
+                                    <img className="" src={item.imagem} alt={item.nome} />
+                                    <h5 className="">{item.nome}</h5>
+                                    <p>
+                                        {item.descricao}
+                                    </p>
+                                    <p>
+                                        {item.preco}
+                                    </p>
                                 </div>
-                                <div class="tab-pane" id="doces">
-                                    <div class="row">
-                                        {doces.map((item, index) => (
-                                            <div class="col-md-3 coluna">
-                                                <a href="/pedido">
-                                                    <div className="" key={index}>
-                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
-                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
-                                                        <p>
-                                                            {item.preco}
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="bebs">
-                                    <div class="row">
-                                        {bebidas.map((item, index) => (
-                                            <div class="col-md-3 coluna">
-                                                <a href="/pedido">
-                                                    <div className="" key={index}>
-                                                        <img className="d-block w-100" src={item.imagem} alt="Pizza de Frango com Bacon" />
-                                                        <h5 className="text-colored fw-bold mt-2">{item.nome}</h5>
-                                                        <p>
-                                                            {item.preco}
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                    ))}
                     </div>
                 </div>
             </section>

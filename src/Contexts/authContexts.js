@@ -13,6 +13,7 @@ export default function AuthProvider({ children }) {
 
     async function verificarToken() {
         const iToken = localStorage.getItem('@token')
+        // console.log(iToken);
         if (!iToken) {
             setTokenT(false)
             return
