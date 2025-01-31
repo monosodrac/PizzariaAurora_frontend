@@ -8,6 +8,7 @@ export default function CadProdutos() {
     verificarToken();
 
     const [nome, setNome] = useState(['']);
+    const [descricao, setDescricao] = useState(['']);
     const [preco, setPreco] = useState(['']);
 
     async function cadastroProdutos(e) {
@@ -19,6 +20,7 @@ export default function CadProdutos() {
             };
             await apiLocal.post('/CadastrarProdutos', {
                 nome,
+                descricao,
                 preco,
             });
             toast.success('Cadastro Efetuado Com Sucesso', {
@@ -53,6 +55,15 @@ export default function CadProdutos() {
                                         name="name"
                                         value={nome}
                                         onChange={(e) => setNome(e.target.value)}
+                                    />
+                                    <label>
+                                        descrição do produto:
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={descricao}
+                                        onChange={(e) => setDescricao(e.target.value)}
                                     />
                                     <label>
                                         Preço:
