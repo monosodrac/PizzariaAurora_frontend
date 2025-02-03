@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DashBoardCliente from '../Dashboard/Cliente';
 import Cardapio from '../Components/Cardapio';
 import Perfil from '../Components/Perfil/PerfilCliente';
-import Pedido from '../Components/ConfirmaPedido/Pedido';
-import PedConf from '../Components/ConfirmaPedido/PedConf';
+import Pedido from '../Components/Pedido/Pedido';
+import PedConf from '../Components/Pedido/PedConf';
 import CadProdutos from '../Components/Cadastro/Produtos/CadProdutos'
 
 import Maintenance from '../Maintenance/index'

@@ -1,16 +1,19 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from 'react'
 import { AutenticadoContexto } from "../../Contexts/authContexts";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import apiLocal from '../../Api/apiLocal';
+import { toast } from 'react-toastify';
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import Pizza from "../../Styles/Imgs/pizza1-1.jpg";
 
 export default function Pedido() {
 
+    const navigate = useNavigate();
+
     const { verificarToken } = useContext(AutenticadoContexto);
     verificarToken();
-
-    const navigate = useNavigate();
 
     function confPed() {
         navigate('/pedido-confirmado')

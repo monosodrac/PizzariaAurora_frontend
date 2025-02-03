@@ -37,7 +37,7 @@ export default function Cardapio() {
             <section id="cardapio" className="cardapio pt-5 pb-5">
                 <div class="container">
                     <div className="cardapio__tabs">
-                    {salgadas.map((item, index) => (
+                    {dadosProdutos.map((item, index) => (
                             <a href="/pedido">
                                 <div className="cardapio__tabs__item" key={index}>
                                     <img className="" src={item.imagem} alt={item.nome} />

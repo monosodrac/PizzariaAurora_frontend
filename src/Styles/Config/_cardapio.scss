@@ -5,10 +5,11 @@
 
     &__tabs {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5%;
         margin: 2rem;
-        
+
+
         a {
             text-decoration: none;
             color: variaveis.$corTitle;
@@ -22,6 +23,10 @@
             margin: 0 auto;
             // border: 1px solid rgba(0, 0, 0, .3);
             // box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.5);
+        
+            &:hover {
+                background-color: variaveis.$corSecundaria;
+            }
 
             img {
                 padding: 1rem;
