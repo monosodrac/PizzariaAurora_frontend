@@ -29,11 +29,18 @@ export default function Pedido() {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log(resposta);
-                // setNome(resposta.data.nome)
+                // console.log(resposta.data);
+                setNome(resposta.data.nome)
+                setDescricao(resposta.data.descricao)
+                setPreco(resposta.data.preco)
             };
-        } catch(err) {};
-    });
+            consultarProdutos();
+        } catch(err) {
+            toast.error('Erro ao Comunicar com o Servidor', {
+                toastId: 'ToastId'
+            });
+        };
+    }, []);
 
     function confPed() {
         navigate('/pedido-confirmado')
@@ -49,16 +56,13 @@ export default function Pedido() {
                     <img src={Pizza} alt="Pizza de Frango com Bacon" />
                     <div className="delivery__text">
                         <h4>
-                            Pizza de Frango com Bacon.
+                            {nome}
                         </h4>
                         <p>
-                            Frango, Bacon, Milho e Azeitona.
+                            {descricao}
                         </p>
                         <p>
-                            Tempo estimado para entrega: 33 minutos.
-                        </p>
-                        <p>
-                            Valor: R$66,66
+                            {preco}
                         </p>
                         <button onClick={confPed} className="btn" type="submit">Confirmar Pedido</button>
                     </div>
