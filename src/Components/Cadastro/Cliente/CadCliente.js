@@ -14,7 +14,7 @@ export default function CadCliente() {
     const [numero, setNumero] = useState('');
     const [bairro, setBairro] = useState('');
     const [cidade, setCidade] = useState('');
-    const [estado, setEstado] = useState('');
+    const [uf, setUf] = useState('');
     const [password, setpassword] = useState('');
     const [dadosViaCep, setDadosViaCep] = useState('');
 
@@ -32,7 +32,7 @@ export default function CadCliente() {
                 rua,
                 numero,
                 cidade,
-                estado,
+                uf,
                 password
             });
             toast.success('Cadastro Efetuado Com Sucesso', {
@@ -67,7 +67,7 @@ export default function CadCliente() {
             setRua(dadosViaCep.rua);
             setBairro(dadosViaCep.bairro);
             setCidade(dadosViaCep.cidade);
-            setEstado(dadosViaCep.estado);
+            setUf(dadosViaCep.uf);
         };
         mostrarCep();
     }, [dadosViaCep]);
@@ -125,8 +125,8 @@ export default function CadCliente() {
                     <input
                         type="text"
                         placeholder='Digite seu estado'
-                        value={estado}
-                        onChange={(e) => setEstado({...dadosViaCep, uf: e.target.value})}
+                        value={uf}
+                        onChange={(e) => setUf({...dadosViaCep, uf: e.target.value})}
                     />
                     <input
                         type="password"
