@@ -11,9 +11,29 @@ import Pizza from "../../Styles/Imgs/pizza1-1.jpg";
 export default function Pedido() {
 
     const navigate = useNavigate();
+    const { id } = useParams();
+    const [nome, setNome] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [preco, setPreco] = useState('');
 
-    const { verificarToken } = useContext(AutenticadoContexto);
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
+
+    useEffect (() => {
+        try {
+            async function consultarProdutos() {
+                const resposta  = await apiLocal.post('/ConsultarProdutosUnico', {
+                    id
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                console.log(resposta);
+                // setNome(resposta.data.nome)
+            };
+        } catch(err) {};
+    });
 
     function confPed() {
         navigate('/pedido-confirmado')
