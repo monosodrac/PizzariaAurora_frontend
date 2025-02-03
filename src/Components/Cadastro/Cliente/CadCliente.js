@@ -51,11 +51,12 @@ export default function CadCliente() {
             try {
                 const resposta = await axios.get(`https://viacep.com.br/ws/${cep}/json`);
                 setDadosViaCep({
-                    rua: resposta.data.longradouro,
-                    setBairro: resposta.data.bairro,
-                    setcidade: resposta.data.localidade,
-                    setEstado: resposta.data.uf,
+                    rua: resposta.data.logradouro,
+                    bairro: resposta.data.bairro,
+                    cidade: resposta.data.localidade,
+                    uf: resposta.data.uf,
                 });
+                console.log(resposta);
             } catch (error) {
                 console.log('Erro ao buscar o CEP', error);
             };
