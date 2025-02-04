@@ -2,85 +2,66 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
 import { toast } from 'react-toastify';
 import apiLocal from '../../Api/apiLocal';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function DashBoard() {
 
-    const {verificarToken, token} = useContext(AutenticadoContexto);
+    const { id } = useParams();
+
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
-    
-    const [dadosUsuarios, setDadosUsuarios] = useState(['']);
 
     useEffect(() => {
         try {
-            async function consultarDadosusuarios() {
-                const resposta = await apiLocal.get('/ConsultarUsuarios', {
+            async function exibirInfoPerfil() {
+                const resposta = await apiLocal.post('/ConsultarUsuariosUnico', {
+                    id
+                }, {
                     headers: {
-                       // Authorization: 'Bearer ' + `${token}`
                         Authorization: `Bearer ${token}`
                     }
                 });
-                setDadosUsuarios(resposta.data);
+                setNome(resposta.data.nome);
+                setEmail(resposta.data.email);
+                // setPassword(resposta.data.password);
             };
-            consultarDadosusuarios();
+            exibirInfoPerfil();
         } catch (err) {
             toast.error('Erro ao Comunicar com BackEnd', {
                 toastId: 'ToastId'
             });
         };
-        // eslint-disable-next-line
     }, []);
-
-    async function apagaUsuarios(id) {
-        try {
-            await apiLocal.delete(`/ApagarUsuarios/${id}`);
-            toast.success('Registro Apagado com Sucesso', {
-                toastId: 'ToastId'
-            });
-        } catch (err) {
-            toast.error('Erro ao Comunicar com BackEnd', {
-                toastId: 'ToastId'
-            });
-        };
-    };
 
     return (
         <>
-            {dadosUsuarios.length === 0
-                ?
-                <div className='conteinerDashboardGeral'>
-                    <h1>Pagina de DashBoard</h1>
-                    <h1>Sem dados</h1>
-                </div>
-                :
-                <div className='conteinerDashboardGeral'>
-                    <h1>Pagina de DashBoard</h1>
-                    <table className='usuariosTabela'>
-                        <thead>
-                            <tr key="">
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Edita</th>
-                                <th>Apaga</th>
-                            </tr>
-                            {dadosUsuarios.map((item) => {
-                                return (
-                                    <>
-                                        <tr key="">
-                                            <td>{item.id}</td>
-                                            <td>{item.nome}</td>
-                                            <td>{item.email}</td>
-                                            <td><Link to={`/EditarUsuarios/${item.id}`}>Editar</Link></td>
-                                            <td><button type='submit' onClick={() => apagaUsuarios(item.id)}>Apagar</button></td>
-                                        </tr>
-                                    </>
-                                )
-                            })}
-                        </thead>
-                    </table>
-                </div>
-            }
+            <div className='hsection'>
+                <h1>Pagina de DashBoard</h1>
+                <h1>Sem dados</h1>
+            </div>
+            <div className=''>
+                <section className="delivery">
+                    <div className="container">
+                        <img src="" alt="Foto de perfil" />
+                        <div className="delivery__text">
+                            <h4>
+                                {nome}
+                            </h4>
+                            <p>
+                                {email}
+                            </p>
+                        </div>
+                    </div>
+                    <a href="/editar-perfil" className=""><IoMdArrowRoundBack /></a>
+                </section>
+                <a href="/" className="back"><IoMdArrowRoundBack /></a>
+            </div>
         </>
     );
 };

@@ -22,7 +22,7 @@ export default function Pedido() {
     useEffect (() => {
         try {
             async function consultarProdutos() {
-                const resposta  = await apiLocal.post('/ConsultarProdutosUnico', {
+                const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
                     id
                 }, {
                     headers: {
