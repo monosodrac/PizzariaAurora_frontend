@@ -15,7 +15,7 @@ export default function CadCliente() {
     const [bairro, setBairro] = useState('');
     const [cidade, setCidade] = useState('');
     const [uf, setUf] = useState('');
-    const [password, setpassword] = useState('');
+    const [password, setPassword] = useState('');
     const [dadosViaCep, setDadosViaCep] = useState('');
 
     async function cadastroUsuarios(e) {
@@ -133,7 +133,7 @@ export default function CadCliente() {
                         type="password"
                         placeholder='Digite sua Senha'
                         value={password}
-                        onChange={(e) => setpassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <button type='submit'>Enviar</button>
                 </form>
