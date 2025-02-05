@@ -54,7 +54,13 @@ export default function EditarPerfil() {
             });
             mudarTela('/');
         } catch (err) {
-            console.log(err.response)
+            if (err.response) {
+                console.log('Erro:', err.response.data);
+                console.log('Status:', err.response.status);
+            } else {
+                console.log('Erro de rede ou configuração:', err.message);
+            }
+            // console.log(err.response)
             // toast.error('Erro ao Comunicar com o Servidor', {
             //     toastId: 'ToastId'
             // });

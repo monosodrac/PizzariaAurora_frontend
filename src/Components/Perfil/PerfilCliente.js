@@ -56,9 +56,9 @@ export default function DashBoard() {
                             <p>
                                 {email}
                             </p>
+                            <a href="/editar-perfil" className="">Editar informações</a>
                         </div>
                     </div>
-                    <a href="/editar-perfil" className=""><IoMdArrowRoundBack /></a>
                 </section>
                 <a href="/" className="back"><IoMdArrowRoundBack /></a>
             </div>
