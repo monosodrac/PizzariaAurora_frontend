@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import apiLocal from '../../Api/apiLocal';
 import { toast } from 'react-toastify';
 
 export default function EditarPerfil() {
     const mudarTela = useNavigate();
-    const { id } = useParams();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
+    
+    const idT = localStorage.getItem('@id');
+    const id = JSON.parse(idT);
 
     useEffect(() => {
         try {
@@ -52,7 +54,7 @@ export default function EditarPerfil() {
             toast.success('Cadastro Alterado com Sucesso', {
                 toastId: 'ToastId'
             });
-            mudarTela('/');
+            mudarTela('/perfil');
         } catch (err) {
             if (err.response) {
                 console.log('Erro:', err.response.data);

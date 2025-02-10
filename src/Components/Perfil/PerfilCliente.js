@@ -2,20 +2,19 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
 import { toast } from 'react-toastify';
 import apiLocal from '../../Api/apiLocal';
-import { Link, useParams } from 'react-router-dom';
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function DashBoard() {
-
-    const { id } = useParams();
-
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     // const [password, setPassword] = useState('')
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
+
+    const idT = localStorage.getItem('@id');
+    const id = JSON.parse(idT);
 
     useEffect(() => {
         try {
@@ -42,8 +41,7 @@ export default function DashBoard() {
     return (
         <>
             <div className='hsection'>
-                <h1>Pagina de DashBoard</h1>
-                <h1>Sem dados</h1>
+                <h1>Perfil</h1>
             </div>
             <div className=''>
                 <section className="delivery">
