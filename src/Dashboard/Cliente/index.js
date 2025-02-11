@@ -21,7 +21,7 @@ export default function DashBoardCliente() {
         <div>
             <Header />
             <main>
-                {/* <Hero /> */}
+                <Hero />
                 <Destaques />
             </main>
             <Link to='/perfil' className='btn__login'><CgProfile /></Link>

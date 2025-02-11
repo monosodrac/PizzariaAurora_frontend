@@ -16,13 +16,19 @@ export default function Pedido() {
     const [descricao, setDescricao] = useState('');
     const [preco, setPreco] = useState('');
 
+    const [comida, setComida] = useState('');
+
+    // const comidaT = comida.find((comida) => comida.id === id);
+    
+    // console.log(comidaT)
+
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
 
     useEffect (() => {
         try {
             async function consultarProdutos() {
-                const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
+                const resposta = await apiLocal.get('/ConsultarProdutos', {
                     id
                 }, {
                     headers: {
@@ -30,9 +36,10 @@ export default function Pedido() {
                     }
                 });
                 // console.log(resposta.data);
-                setNome(resposta.data.nome)
-                setDescricao(resposta.data.descricao)
-                setPreco(resposta.data.preco)
+                // setNome(resposta.data.nome)
+                // setDescricao(resposta.data.descricao)
+                // setPreco(resposta.data.preco)
+                setComida(resposta.data)
             };
             consultarProdutos();
         } catch(err) {
@@ -56,13 +63,13 @@ export default function Pedido() {
                     <img src={Pizza} alt="Pizza de Frango com Bacon" />
                     <div className="delivery__text">
                         <h4>
-                            {nome}
+                            {/* {nome} */}
                         </h4>
                         <p>
-                            {descricao}
+                            {/* {descricao} */}
                         </p>
                         <p>
-                            {preco}
+                            {/* {preco} */}
                         </p>
                         <button onClick={confPed} className="btn" type="submit">Confirmar Pedido</button>
                     </div>

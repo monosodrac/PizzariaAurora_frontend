@@ -1,10 +1,42 @@
-import React, {useContext} from "react";
+import React, { useState, useEffect, useContext } from 'react'
 import { AutenticadoContexto } from "../../Contexts/authContexts";
+import { useParams } from 'react-router-dom';
+import apiLocal from '../../Api/apiLocal';
+import { toast } from 'react-toastify';
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function PedidoConf() {
-    const { verificarToken } = useContext(AutenticadoContexto);
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
+
+    const { id } = useParams();
+    const [nome, setNome] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [preco, setPreco] = useState('');
+
+    useEffect (() => {
+        try {
+            async function consultarProdutos() {
+                const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
+                    id
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                // console.log(resposta.data);
+                setNome(resposta.data.nome)
+                setDescricao(resposta.data.descricao)
+                setPreco(resposta.data.preco)
+            };
+            consultarProdutos();
+        } catch(err) {
+            toast.error('Erro ao Comunicar com o Servidor', {
+                toastId: 'ToastId'
+            });
+        };
+    }, []);
 
     return (
         <div>
@@ -15,22 +47,13 @@ export default function PedidoConf() {
                 <div className="container">
                     <div className="delivery__text">
                         <h4>
-                            Pizza de Frango com Bacon.
+                            {nome}
                         </h4>
                         <p>
-                            Frango, Bacon, Milho e Azeitona.
+                            {descricao}
                         </p>
                         <p>
-                            Endereço: <br />
-                            Rua Lorem, 66 <br />
-                            Vila Luciano <br />
-                            Senac SP
-                        </p>
-                        <p>
-                            Tempo estimado para entrega: 33 minutos.
-                        </p>
-                        <p>
-                            Valor: R$66,66
+                            Valor: R${preco}
                         </p>
                         <a href="/" className="back"><IoMdArrowRoundBack /></a>
                     </div>

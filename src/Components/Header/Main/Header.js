@@ -20,16 +20,6 @@ export default function Header() {
                                 </a>
                             </li>
                             <li className="nav-item fw-bold">
-                                <a href='#spc' className="nav-link">
-                                    Espaço
-                                </a>
-                            </li>
-                            <li className="nav-item fw-bold">
-                                <a href='#dlvr' className="nav-link">
-                                    Delivery
-                                </a>
-                            </li>
-                            <li className="nav-item fw-bold">
                                 <a href='#cont' className="nav-link">
                                     Contato
                                 </a>

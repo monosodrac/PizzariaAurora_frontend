@@ -35,7 +35,8 @@
   background-color: transparent;
   color: variaveis.$corSecundaria;
   font-size: 4rem;
-
+  z-index: 999;
+  
   &:hover {
     transform: scale(1.2);
   }
@@ -53,6 +54,7 @@
   background-color: transparent;
   color: variaveis.$corSecundaria;
   font-size: 4.5rem;
+  z-index: 999;
   
   &:hover {
     transform: scale(1.2);
