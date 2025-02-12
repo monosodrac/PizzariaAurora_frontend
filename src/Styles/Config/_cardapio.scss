@@ -9,7 +9,6 @@
         gap: 5%;
         margin: 2rem;
 
-
         a {
             text-decoration: none;
             color: variaveis.$corTitle;
@@ -32,6 +31,15 @@
                 padding: 1rem;
                 margin-bottom: 1rem;
                 max-width: 100%;
+                height: 10rem;
+            }
+
+            h5 {
+                height: 3rem;
+            }
+
+            p {
+                height: 3rem;
             }
         }
     }

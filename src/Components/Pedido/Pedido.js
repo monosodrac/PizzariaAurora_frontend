@@ -12,11 +12,12 @@ export default function Pedido() {
 
     const navigate = useNavigate();
     const { id } = useParams();
-    const [nome, setNome] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [preco, setPreco] = useState('');
+    // const [nome, setNome] = useState('');
+    // const [descricao, setDescricao] = useState('');
+    // const [preco, setPreco] = useState('');
+    console.log(id);
 
-    const [comida, setComida] = useState('');
+    // const [comida, setComida] = useState('');
 
     // const comidaT = comida.find((comida) => comida.id === id);
     
@@ -39,7 +40,7 @@ export default function Pedido() {
                 // setNome(resposta.data.nome)
                 // setDescricao(resposta.data.descricao)
                 // setPreco(resposta.data.preco)
-                setComida(resposta.data)
+                // setComida(resposta.data)
             };
             consultarProdutos();
         } catch(err) {
