@@ -12,16 +12,9 @@ export default function Pedido() {
 
     const navigate = useNavigate();
     const { id } = useParams();
-    // const [nome, setNome] = useState('');
-    // const [descricao, setDescricao] = useState('');
-    // const [preco, setPreco] = useState('');
-    console.log(id);
-
-    // const [comida, setComida] = useState('');
-
-    // const comidaT = comida.find((comida) => comida.id === id);
-    
-    // console.log(comidaT)
+    const [nome, setNome] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [preco, setPreco] = useState('');
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
@@ -29,18 +22,17 @@ export default function Pedido() {
     useEffect (() => {
         try {
             async function consultarProdutos() {
-                const resposta = await apiLocal.get('/ConsultarProdutos', {
+                const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
                     id
                 }, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
-                });
-                // console.log(resposta.data);
-                // setNome(resposta.data.nome)
-                // setDescricao(resposta.data.descricao)
-                // setPreco(resposta.data.preco)
-                // setComida(resposta.data)
+                })
+                console.log(resposta)               
+                setNome(resposta.data.nome)
+                setDescricao(resposta.data.descricao)
+                setPreco(resposta.data.preco)
             };
             consultarProdutos();
         } catch(err) {
@@ -64,13 +56,13 @@ export default function Pedido() {
                     <img src={Pizza} alt="Pizza de Frango com Bacon" />
                     <div className="delivery__text">
                         <h4>
-                            {/* {nome} */}
+                            {nome}
                         </h4>
                         <p>
-                            {/* {descricao} */}
+                            {descricao}
                         </p>
                         <p>
-                            {/* {preco} */}
+                            {preco}
                         </p>
                         <button onClick={confPed} className="btn" type="submit">Confirmar Pedido</button>
                     </div>
