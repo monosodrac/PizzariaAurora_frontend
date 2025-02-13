@@ -8,11 +8,17 @@ export default function EditarPerfil() {
     const mudarTela = useNavigate();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
+    const [cep, setCep] = useState('')
+    const [rua, setRua] = useState('')
+    const [numero, setNumero] = useState('')
+    const [bairro, setBairro] = useState('')
+    const [cidade, setCidade] = useState('')
+    const [uf, setUf] = useState('')
     const [password, setPassword] = useState('');
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
-    
+
     const idT = localStorage.getItem('@id');
     const id = JSON.parse(idT);
 
@@ -28,6 +34,12 @@ export default function EditarPerfil() {
                 });
                 setNome(resposta.data.nome);
                 setEmail(resposta.data.email);
+                setCep(resposta.data.cep);
+                setRua(resposta.data.rua);
+                setNumero(resposta.data.numero);
+                setBairro(resposta.data.bairro);
+                setCidade(resposta.data.cidade);
+                setUf(resposta.data.estado);
                 setPassword(resposta.data.senha);
             };
             consultarDados();
@@ -45,7 +57,13 @@ export default function EditarPerfil() {
             await apiLocal.put('/AlterarDadosUsuarios', {
                 id,
                 nome,
-                email
+                email,
+                cep,
+                rua,
+                numero,
+                bairro,
+                cidade,
+                uf
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -85,6 +103,36 @@ export default function EditarPerfil() {
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={cep}
+                        onChange={(e) => setCep(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={rua}
+                        onChange={(e) => setRua(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={numero}
+                        onChange={(e) => setNumero(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={bairro}
+                        onChange={(e) => setBairro(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={cidade}
+                        onChange={(e) => setCidade(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        value={uf}
+                        onChange={(e) => setUf(e.target.value)}
                     />
                     <input
                         disabled

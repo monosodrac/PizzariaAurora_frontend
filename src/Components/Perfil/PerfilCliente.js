@@ -8,6 +8,12 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 export default function DashBoard() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
+    const [cep, setCep] = useState('')
+    const [rua, setRua] = useState('')
+    const [numero, setNumero] = useState('')
+    const [bairro, setBairro] = useState('')
+    const [cidade, setCidade] = useState('')
+    const [uf, setUf] = useState('')
     // const [password, setPassword] = useState('')
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
@@ -26,8 +32,15 @@ export default function DashBoard() {
                         Authorization: `Bearer ${token}`
                     }
                 });
+                console.log(resposta)
                 setNome(resposta.data.nome);
                 setEmail(resposta.data.email);
+                setCep(resposta.data.cep);
+                setRua(resposta.data.rua);
+                setNumero(resposta.data.numero);
+                setBairro(resposta.data.bairro);
+                setCidade(resposta.data.cidade);
+                setUf(resposta.data.estado);
                 // setPassword(resposta.data.password);
             };
             exibirInfoPerfil();
@@ -44,15 +57,33 @@ export default function DashBoard() {
                 <h1>Perfil</h1>
             </div>
             <div className=''>
-                <section className="delivery">
+                <section className="perfil">
                     <div className="container">
                         <img src="" alt="Foto de perfil" />
-                        <div className="delivery__text">
+                        <div className="perfil__text">
                             <h4>
                                 {nome}
                             </h4>
                             <p>
                                 {email}
+                            </p>
+                            <p>
+                                {cep}
+                            </p>
+                            <p>
+                                {rua}
+                            </p>
+                            <p>
+                                {numero}
+                            </p>
+                            <p>
+                                {bairro}
+                            </p>
+                            <p>
+                                {cidade}
+                            </p>
+                            <p>
+                                {uf}
                             </p>
                             <a href="/editar-perfil" className="">Editar informações</a>
                         </div>

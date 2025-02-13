@@ -24,8 +24,7 @@ export default function PedidoConf() {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
-                });
-                // console.log(resposta.data);
+                })
                 setNome(resposta.data.nome)
                 setDescricao(resposta.data.descricao)
                 setPreco(resposta.data.preco)

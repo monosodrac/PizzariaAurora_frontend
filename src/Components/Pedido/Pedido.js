@@ -29,7 +29,6 @@ export default function Pedido() {
                         Authorization: `Bearer ${token}`
                     }
                 })
-                console.log(resposta)               
                 setNome(resposta.data.nome)
                 setDescricao(resposta.data.descricao)
                 setPreco(resposta.data.preco)
@@ -43,7 +42,7 @@ export default function Pedido() {
     }, []);
 
     function confPed() {
-        navigate('/pedido-confirmado')
+        navigate(`/pedido-confirmado/${id}`)
     }
 
     return (

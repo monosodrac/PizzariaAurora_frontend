@@ -31,6 +31,7 @@ export default function CadCliente() {
                 cep,
                 rua,
                 numero,
+                bairro,
                 cidade,
                 uf,
                 password

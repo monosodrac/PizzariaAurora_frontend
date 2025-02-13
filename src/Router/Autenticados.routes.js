@@ -22,7 +22,7 @@ export default function Autenticados() {
                     <Route path='/perfil' element={<Perfil />} />
                     <Route path='/editar-perfil' element={<EditarPerfil />} />
                     <Route path='/pedido/:id' element={<Pedido />} />
-                    <Route path='/pedido-confirmado' element={<PedConf />} />
+                    <Route path='/pedido-confirmado/:id' element={<PedConf />} />
 
                     <Route path='/maintenance' element={<Maintenance />} />
 
