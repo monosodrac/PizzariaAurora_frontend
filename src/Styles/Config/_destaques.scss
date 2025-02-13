@@ -3,14 +3,28 @@
 .destaques__list {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     
     &__item {
+        display: flex;
+        align-items: center;
         list-style: none;
         margin: 4rem 0;
         
         img {
-            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            max-width: 60%;
+            align-items: center;
+        }
+
+        p {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: variaveis.$corTitle;
         }
     }
 }

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import DashBoardCliente from '../Dashboard/Cliente';
+import DashBoardCliente from '../Dashboard';
 import Cardapio from '../Components/Cardapio';
 import Perfil from '../Components/Perfil/PerfilCliente';
 import EditarPerfil from '../Components/EditarPerfil';

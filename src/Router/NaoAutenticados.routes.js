@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Inicio from '../Inicio/NaoAutenticado';
+import Inicio from '../Inicio';
 import Login from '../Components/Login/Login';
 import CadCliente from '../Components/Cadastro/Cliente/CadCliente';
 import Maintenance from '../Maintenance/index';

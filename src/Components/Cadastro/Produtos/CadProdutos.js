@@ -1,36 +1,57 @@
 import React, { useState, useContext } from "react";
 import { AutenticadoContexto } from "../../../Contexts/authContexts";
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import apiLocal from '../../../Api/apiLocal';
 
 export default function CadProdutos() {
-    const { verificarToken } = useContext(AutenticadoContexto);
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
 
     const [nome, setNome] = useState(['']);
     const [descricao, setDescricao] = useState(['']);
     const [preco, setPreco] = useState(['']);
+    const [imagem, setImagem] = useState(null);
+
+    const navigate = useNavigate();
+
+    function pegarImagem(e) {
+        if (!e.target.files) {
+            return;
+        };
+        const image = e.target.files[0];
+        if (image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
+            setImagem(image);
+        };
+    };
 
     async function cadastroProdutos(e) {
         try {
             e.preventDefault();
-            if (!nome || !preco ) {
-                alert("Campos em Branco");
-                return;
-            };
-            await apiLocal.post('/CadastrarProdutos', {
-                nome,
-                descricao,
-                preco,
+            const data = new FormData();
+            data.append('nome', nome);
+            data.append('descricao', descricao);
+            data.append('preco', preco);
+            data.append('file', imagem);
+            const resposta = await apiLocal.post('/CadastrarProdutos', data, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             });
-            toast.success('Cadastro Efetuado Com Sucesso', {
+            console.log(resposta)
+            toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
             });
+            
         } catch (err) {
             toast.error('Erro ao Comunicar com BackEnd', {
                 toastId: 'ToastId'
             });
         };
+        setNome('');
+        setDescricao('');
+        setPreco('');
+        setImagem(null);
     };
 
     return (
@@ -47,6 +68,11 @@ export default function CadProdutos() {
                         <div className="tab-pane active" id="aba1">
                             <div className="container">
                                 <form className="form__Prod" onSubmit={cadastroProdutos}>
+                                    <input
+                                        type="file"
+                                        accept="image/jpeg, image/png"
+                                        onChange={pegarImagem}
+                                    />
                                     <label>
                                         Nome do produto:
                                     </label>

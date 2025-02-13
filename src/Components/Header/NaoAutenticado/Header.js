@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../../../Styles/Imgs/logo.png';
 
 
-export default function Header() {
+export default function HeaderNaoAutenticado() {
     return (
         <div>
             <header className="navbar navbar-expand-lg sticky-top" id='head'>

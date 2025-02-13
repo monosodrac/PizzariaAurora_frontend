@@ -18,14 +18,9 @@ export default function Destaques() {
               </a>
             </li>
             <li className="destaques__list__item">
-              <a href="/maintenance">
-                <img src={ImgRod} alt="Anúncio Rodízio" />
-              </a>
-            </li>
-            <li className="destaques__list__item">
-              <a href="/maintenance">
-                <img src={ImgProm} alt="Anúncio Promoções" />
-              </a>
+              <p className="title">
+              Preservamos a essência da tradição na pizza, elevando-a com ingredientes selecionados, técnicas autênticas e uma pitada de inovação para surpreender seu paladar!
+              </p>
             </li>
           </ul>
         </div>
