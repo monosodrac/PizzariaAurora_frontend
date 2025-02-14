@@ -26,7 +26,6 @@ export default function Contato() {
                         <div className="rodape">
                             <h2>
                                 &copy; Desenvolvido por Mono <br />
-                                Projeto final para unidade curricular 3 <br />
                                 Técnico em informática para Internet - Senac
                             </h2>
                         </div>

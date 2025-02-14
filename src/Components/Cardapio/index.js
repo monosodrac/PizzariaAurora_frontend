@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { salgadas } from "../../Assets/assets";
+import Contatto from '../Footer/Main/Contato'
+import Contato from "../Footer/Main/Contato";
 
 export default function Cardapio() {
     const { verificarToken } = useContext(AutenticadoContexto);
@@ -37,10 +39,12 @@ export default function Cardapio() {
             <section id="cardapio" className="cardapio pt-5 pb-5">
                 <div class="container">
                     <div className="cardapio__tabs">
-                        {dadosProdutos.map((item, index) => (
+                        {dadosProdutos.map((item, index) => {
+                            const imagemProduto = salgadas.find(img => img.imagem)?.imagem
+                            return(
                             <Link to={`/pedido/${item.id}`}>
                                 <div className="cardapio__tabs__item" key={index}>
-                                    <img className="" src={item.imagem} alt={item.nome} />
+                                    <img className="" src={imagemProduto} alt={item.nome} />
                                     <h5 className="">{item.nome}</h5>
                                     <p>
                                         {item.descricao}
@@ -50,11 +54,12 @@ export default function Cardapio() {
                                     </p>
                                 </div>
                             </Link>
-                        ))}
+                        )})}
                     </div>
                 </div>
             </section>
             <a href="/" className="back"><IoMdArrowRoundBack /></a>
+            <Contato />
         </div>
     );
 };
