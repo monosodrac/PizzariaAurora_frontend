@@ -1,20 +1,22 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AutenticadoContexto } from "../../Contexts/authContexts";
 import apiLocal from "../../Api/apiLocal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { salgadas } from "../../Assets/assets";
-import Contatto from '../Footer/Main/Contato'
 import Contato from "../Footer/Main/Contato";
 
 export default function Cardapio() {
-    const { verificarToken } = useContext(AutenticadoContexto);
+    const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
 
+    const navigate = useNavigate();
+
     const [dadosProdutos, setDadosProdutos] = useState(['']);
+    const tokenT = token;
 
     useEffect(() => {
         try {
@@ -36,20 +38,32 @@ export default function Cardapio() {
             <div className="hsection" id="cont">
                 <h2>Cardápio</h2>
             </div>
-            <section id="cardapio" className="cardapio pt-5 pb-5">
+            <section id="cardapio" className="cardapio">
                 <div class="container">
                     <div className="cardapio__tabs">
                         {dadosProdutos.map((item, index) => {
                             const imagemProduto = salgadas.find(img => img.imagem)?.imagem
+
+                            // function navega() {
+                            //     if(!tokenT) {
+                            //         navigate('/login')
+                            //     } else {
+                            //         navigate(`/pedido/${item.id}`)
+                            //     };
+                            //     console.log(tokenT)
+                            // };
+
                             return(
-                            <Link to={`/pedido/${item.id}`}>
+                            // <Link onClick={navega()}>
+                            <Link to={`/pedido/${item.id}`} >
                                 <div className="cardapio__tabs__item" key={index}>
                                     <img className="" src={imagemProduto} alt={item.nome} />
-                                    <h5 className="">{item.nome}</h5>
+                                    <h5 className="">Pizza: {item.nome}</h5>
                                     <p>
-                                        {item.descricao}
+                                        Descrição: {item.descricao}
                                     </p>
                                     <p>
+                                        Preço: R$
                                         {item.preco}
                                     </p>
                                 </div>

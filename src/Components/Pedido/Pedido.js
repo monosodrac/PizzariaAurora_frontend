@@ -19,7 +19,7 @@ export default function Pedido() {
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
 
-    useEffect (() => {
+    useEffect(() => {
         try {
             async function consultarProdutos() {
                 const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
@@ -34,7 +34,7 @@ export default function Pedido() {
                 setPreco(resposta.data.preco)
             };
             consultarProdutos();
-        } catch(err) {
+        } catch (err) {
             toast.error('Erro ao Comunicar com o Servidor', {
                 toastId: 'ToastId'
             });
@@ -55,13 +55,13 @@ export default function Pedido() {
                     <img src={Pizza} alt="Pizza de Frango com Bacon" />
                     <div className="delivery__text">
                         <h4>
-                            {nome}
+                            Pizza: {nome}
                         </h4>
                         <p>
-                            {descricao}
+                            Descrição: {descricao}
                         </p>
                         <p>
-                            {preco}
+                            Preço: R${preco}
                         </p>
                         <button onClick={confPed} className="btn" type="submit">Confirmar Pedido</button>
                     </div>

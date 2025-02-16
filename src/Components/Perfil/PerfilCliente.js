@@ -32,7 +32,6 @@ export default function DashBoard() {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log(resposta)
                 setNome(resposta.data.nome);
                 setEmail(resposta.data.email);
                 setCep(resposta.data.cep);

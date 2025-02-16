@@ -15,7 +15,7 @@ export default function PedidoConf() {
     const [descricao, setDescricao] = useState('');
     const [preco, setPreco] = useState('');
 
-    useEffect (() => {
+    useEffect(() => {
         try {
             async function consultarProdutos() {
                 const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
@@ -30,7 +30,7 @@ export default function PedidoConf() {
                 setPreco(resposta.data.preco)
             };
             consultarProdutos();
-        } catch(err) {
+        } catch (err) {
             toast.error('Erro ao Comunicar com o Servidor', {
                 toastId: 'ToastId'
             });
@@ -46,10 +46,10 @@ export default function PedidoConf() {
                 <div className="container">
                     <div className="delivery__text">
                         <h4>
-                            {nome}
+                            Pizza: {nome}
                         </h4>
                         <p>
-                            {descricao}
+                            Descrição: {descricao}
                         </p>
                         <p>
                             Valor: R${preco}
