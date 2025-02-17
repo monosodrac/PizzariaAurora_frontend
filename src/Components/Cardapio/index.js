@@ -42,7 +42,7 @@ export default function Cardapio() {
                 <div class="container">
                     <div className="cardapio__tabs">
                         {dadosProdutos.map((item, index) => {
-                            const imagemProduto = salgadas.find(img => img.imagem)?.imagem
+                            // const imagemProduto = salgadas.find(img => img.imagem)?.imagem
 
                             // function navega() {
                             //     if(!tokenT) {
@@ -57,7 +57,7 @@ export default function Cardapio() {
                             // <Link onClick={navega()}>
                             <Link to={`/pedido/${item.id}`} >
                                 <div className="cardapio__tabs__item" key={index}>
-                                    <img className="" src={imagemProduto} alt={item.nome} />
+                                    <img className="" src={`http://localhost:3333/files/${item.banner}`} alt={item.nome} />
                                     <h5 className="">Pizza: {item.nome}</h5>
                                     <p>
                                         Descrição: {item.descricao}
