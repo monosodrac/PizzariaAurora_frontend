@@ -2,30 +2,42 @@
 
 .perfil {
     margin: 5rem;
-    
+
     .container {
         justify-content: space-around;
-        
-        img {
-            width: 19rem;
-        }
-        
     }
-    
-    &__text {
-        padding: 0 15rem;
-        border-left: 1px solid #000;
-        height: 60vh;
-        font-size: 1.5rem;
-        font-family: variaveis.$fontDlvr;
-        
+
+    &__img-nome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 2rem;
+
+        img {
+            height: 19rem;
+            width: 19rem;
+            border-radius: 50%;
+        }
+
         h4 {
             margin-bottom: 1rem;
             font-size: 3rem;
             color: variaveis.$corPrincipal;
         }
+    }
 
-        p {
+    &__text {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 13rem;
+        border-left: 1px solid #000;
+        height: 60vh;
+        font-size: 1.5rem;
+        font-family: variaveis.$fontDlvr;
+
+        input {
             margin-bottom: 2rem;
         }
 
@@ -34,7 +46,7 @@
             border-radius: 20px;
             color: variaveis.$corPrincipal;
             text-decoration: none;
-            
+
             &:hover {
                 background-color: variaveis.$corSecundaria;
             }
@@ -45,10 +57,10 @@
 @media (max-width: 767px) {
     .delivery {
         margin: 5rem;
-        
+
         .container {
             display: block;
-            
+
             img {
                 width: auto;
                 max-width: 100%;
@@ -56,7 +68,7 @@
 
             &__text {
                 font-size: .5rem;
-                
+
                 h4 {
                     font-size: 1rem;
                 }

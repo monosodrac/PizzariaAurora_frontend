@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import apiLocal from '../../Api/apiLocal';
 import { toast } from 'react-toastify';
 
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 export default function EditarPerfil() {
     const mudarTela = useNavigate();
     const [nome, setNome] = useState('');
@@ -92,57 +94,68 @@ export default function EditarPerfil() {
             <div class="hsection">
                 <h2>Editar Usuários</h2>
             </div>
-            <div className="">
-                <form onSubmit={enviarAlteracao}>
-                    <input
-                        type="text"
-                        value={nome}
-                        onChange={(e) => setNome(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={cep}
-                        onChange={(e) => setCep(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={rua}
-                        onChange={(e) => setRua(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={numero}
-                        onChange={(e) => setNumero(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={bairro}
-                        onChange={(e) => setBairro(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={cidade}
-                        onChange={(e) => setCidade(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        value={uf}
-                        onChange={(e) => setUf(e.target.value)}
-                    />
-                    <input
-                        disabled
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <button type='submit'>Enviar</button>
-                    <button type='submit' className='buttonVoltar' onClick={() => mudarTela('/')}>Voltar</button>
-                </form>
+            <div className="perfil">
+                <div class="container">
+                    <form onSubmit={enviarAlteracao}>
+                        <label>Nome: </label>
+                        <input
+                            type="text"
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                        />
+                        <label>Email: </label>
+                        <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <label>CEP: </label>
+                        <input
+                            type="text"
+                            value={cep}
+                            onChange={(e) => setCep(e.target.value)}
+                        />
+                        <label>Rua: </label>
+                        <input
+                            type="text"
+                            value={rua}
+                            onChange={(e) => setRua(e.target.value)}
+                        />
+                        <label>Número: </label>
+                        <input
+                            type="text"
+                            value={numero}
+                            onChange={(e) => setNumero(e.target.value)}
+                        />
+                        <label>Bairro: </label>
+                        <input
+                            type="text"
+                            value={bairro}
+                            onChange={(e) => setBairro(e.target.value)}
+                        />
+                        <label>Cidade: </label>
+                        <input
+                            type="text"
+                            value={cidade}
+                            onChange={(e) => setCidade(e.target.value)}
+                        />
+                        <label>Estado: </label>
+                        <input
+                            type="text"
+                            value={uf}
+                            onChange={(e) => setUf(e.target.value)}
+                        />
+                        <label>Senha: </label>
+                        <input
+                            disabled
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <button className='btn' type='submit'>Enviar</button>
+                        <a href="/perfil" className="back"><IoMdArrowRoundBack /></a>
+                    </form>
+                </div>
             </div>
         </div>
     )
