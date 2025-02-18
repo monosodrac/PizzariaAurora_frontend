@@ -16,6 +16,7 @@ export default function DashBoard() {
     const [bairro, setBairro] = useState('')
     const [cidade, setCidade] = useState('')
     const [uf, setUf] = useState('')
+    const [banner, setBanner] = useState('')
     // const [password, setPassword] = useState('')
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
@@ -42,6 +43,7 @@ export default function DashBoard() {
                 setBairro(resposta.data.bairro);
                 setCidade(resposta.data.cidade);
                 setUf(resposta.data.estado);
+                setBanner(resposta.data.banner);
                 // setPassword(resposta.data.password);
             };
             exibirInfoPerfil();
@@ -61,7 +63,7 @@ export default function DashBoard() {
                 <section className="perfil">
                     <div className="container">
                         <div class="perfil__img-nome">
-                            <img src={Img} alt="Foto de perfil" />
+                            <img className="" src={`http://localhost:3333/files/${banner}`} alt="Foto do Perfil" />
                             <h4>
                                 {nome}
                             </h4>

@@ -16,35 +16,50 @@ export default function CadCliente() {
     const [cidade, setCidade] = useState('');
     const [uf, setUf] = useState('');
     const [password, setPassword] = useState('');
+    const [imagem, setImagem] = useState(null)
     const [dadosViaCep, setDadosViaCep] = useState('');
+
+    function pegarImagem(e) {
+        if (!e.target.files) {
+            return
+        }
+        const image = e.target.files[0]
+        if (image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
+            setImagem(image)
+        }
+    }
 
     async function cadastroUsuarios(e) {
         try {
-            e.preventDefault();
-            if (!nome || !email || !password) {
-                alert("Campos em Branco");
-                return;
-            };
-            await apiLocal.post('/CadastrarUsuarios', {
-                nome,
-                email,
-                cep,
-                rua,
-                numero,
-                bairro,
-                cidade,
-                uf,
-                password
-            });
-            toast.success('Cadastro Efetuado Com Sucesso', {
+            e.preventDefault()
+            const data = new FormData()
+            data.append('nome', nome)
+            data.append('email', email)
+            data.append('cep', cep)
+            data.append('rua', rua)
+            data.append('numero', numero)
+            data.append('bairro', bairro)
+            data.append('cidade', cidade)
+            data.append('uf', uf)
+            data.append('password', password)
+            data.append('file', imagem)
+            const resposta = await apiLocal.post('/CadastrarUsuarios', data)
+            toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
-            });
-            mudarTela('/login');
+            })
+            mudarTela('/')
         } catch (err) {
-            toast.error('Erro ao Comunicar com BackEnd', {
-                toastId: 'ToastId'
-            });
-        };
+            console.log(err)
+        }
+        setNome('')
+        setEmail('')
+        setCep('')
+        setRua('')
+        setNumero('')
+        setBairro('')
+        setCidade('')
+        setUf('')
+        setImagem(null)
     };
 
     const handleCepBlur = async () => {
@@ -104,7 +119,7 @@ export default function CadCliente() {
                         type="text"
                         placeholder='Digite sua rua'
                         value={rua}
-                        onChange={(e) => setRua({...dadosViaCep, rua: e.target.value})}
+                        onChange={(e) => setRua({ ...dadosViaCep, rua: e.target.value })}
                     />
                     <input
                         type="text"
@@ -116,25 +131,30 @@ export default function CadCliente() {
                         type="text"
                         placeholder='Digite seu bairro'
                         value={bairro}
-                        onChange={(e) => setBairro({...dadosViaCep, bairro: e.target.value})}
+                        onChange={(e) => setBairro({ ...dadosViaCep, bairro: e.target.value })}
                     />
                     <input
                         type="text"
                         placeholder='Digite sua cidade'
                         value={cidade}
-                        onChange={(e) => setCidade({...dadosViaCep, cidade: e.target.value})}
+                        onChange={(e) => setCidade({ ...dadosViaCep, cidade: e.target.value })}
                     />
                     <input
                         type="text"
                         placeholder='Digite seu estado'
                         value={uf}
-                        onChange={(e) => setUf({...dadosViaCep, uf: e.target.value})}
+                        onChange={(e) => setUf({ ...dadosViaCep, uf: e.target.value })}
                     />
                     <input
                         type="password"
                         placeholder='Digite sua Senha'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <input
+                        type="file"
+                        accept='image/jpeg, image/png'
+                        onChange={pegarImagem}
                     />
                     <button type='submit'>Enviar</button>
                 </form>

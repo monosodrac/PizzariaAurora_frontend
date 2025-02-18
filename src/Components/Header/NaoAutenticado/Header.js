@@ -2,7 +2,6 @@ import React from 'react';
 
 import Logo from '../../../Styles/Imgs/logo.png';
 
-
 export default function HeaderNaoAutenticado() {
     return (
         <div>

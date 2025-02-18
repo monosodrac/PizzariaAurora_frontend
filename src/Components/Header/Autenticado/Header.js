@@ -1,9 +1,17 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 import Logo from '../../../Styles/Imgs/logo.png';
 
 
 export default function HeaderAutenticado() {
+    const navigator = useNavigate();
+
+    function sairSistema() {
+        localStorage.clear();
+        navigator('/login');
+      }
+
     return (
         <div>
             <header className="navbar navbar-expand-lg sticky-top" id='head'>
@@ -28,6 +36,11 @@ export default function HeaderAutenticado() {
                                 <a href="/perfil" className="nav-link">
                                     Perfil
                                 </a>
+                            </li>
+                            <li className="nav-item fw-bold">
+                                <button onClick={sairSistema} className="nav-link">
+                                    Sair
+                                </button>
                             </li>
                         </ul>
                     </nav>
