@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AutenticadoContexto } from "../../../Contexts/authContexts";
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import apiLocal from '../../../Api/apiLocal';
 
@@ -13,7 +13,7 @@ export default function CadProdutos() {
     const [preco, setPreco] = useState(['']);
     const [imagem, setImagem] = useState(null);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     function pegarImagem(e) {
         if (!e.target.files) {
@@ -42,6 +42,7 @@ export default function CadProdutos() {
             toast.success(resposta.data.dados, {
                 toastId: 'ToastId'
             })
+            navigate("/cardapio")
         } catch (err) {
             console.log(err)
         }

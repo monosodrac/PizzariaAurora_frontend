@@ -15,6 +15,7 @@ export default function Pedido() {
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
     const [preco, setPreco] = useState('');
+    const [imagem, setImagem] = useState(null);
 
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
@@ -32,6 +33,7 @@ export default function Pedido() {
                 setNome(resposta.data.nome)
                 setDescricao(resposta.data.descricao)
                 setPreco(resposta.data.preco)
+                setImagem(resposta.data.banner)
             };
             consultarProdutos();
         } catch (err) {
@@ -52,7 +54,7 @@ export default function Pedido() {
             </div>
             <section className="delivery">
                 <div className="container">
-                    <img src={Pizza} alt="Pizza de Frango com Bacon" />
+                    <img src={`http://localhost:3333/files/${imagem}`} alt={descricao} />
                     <div className="delivery__text">
                         <h4>
                             Pizza: {nome}

@@ -45,6 +45,9 @@ export default function PedidoConf() {
             <section className="delivery">
                 <div className="container">
                     <div className="delivery__text">
+                        <h2>
+                            Pedido Confirmado
+                        </h2>
                         <h4>
                             Pizza: {nome}
                         </h4>
