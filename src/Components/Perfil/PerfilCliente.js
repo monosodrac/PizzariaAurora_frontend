@@ -66,74 +66,76 @@ export default function DashBoard() {
             </div>
             <div className=''>
                 <section className="perfil">
-                    {load === false ?
-                        <CirclesWithBar
-                            height="100"
-                            width="100"
-                            color="#4fa94d"
-                            outerCircleColor="#ffffff"
-                            innerCircleColor="#000000"
-                            barColor="#0000ff"
-                            ariaLabel="circles-with-bar-loading"
-                            wrapperStyle={{}}
-                            wrapperClass=""
-                            visible={true}
-                        />
-                        :
-                        <div className="container">
-                            <div class="perfil__img-nome">
-                                <img className="" src={`http://localhost:3333/files/${banner}`} alt="Foto do Perfil" />
-                                <h4>
-                                    {nome}
-                                </h4>
-                            </div>
-                            <div className="perfil__text">
-                                <label>Email: </label>
-                                <input
-                                    type="text"
-                                    value={email}
-                                    disabled
-                                />
-                                <label>CEP: </label>
-                                <input
-                                    type="text"
-                                    value={cep}
-                                    disabled
-                                />
-                                <label>Rua: </label>
-                                <input
-                                    type="text"
-                                    value={rua}
-                                    disabled
-                                />
-                                <label>Numero: </label>
-                                <input
-                                    type="text"
-                                    value={numero}
-                                    disabled
-                                />
-                                <label>Bairro: </label>
-                                <input
-                                    type="text"
-                                    value={bairro}
-                                    disabled
-                                />
-                                <label>Cidade: </label>
-                                <input
-                                    type="text"
-                                    value={cidade}
-                                    disabled
-                                />
-                                <label>Estado: </label>
-                                <input
-                                    type="text"
-                                    value={uf}
-                                    disabled
-                                />
-                                <a href="/editar-perfil" className="">Editar informações</a>
-                            </div>
-                        </div>
-                    }
+                    <div className="container">
+                        {load === false ?
+                            <CirclesWithBar
+                                height="100"
+                                width="100"
+                                color="#4fa94d"
+                                outerCircleColor="#ffffff"
+                                innerCircleColor="#000000"
+                                barColor="#0000ff"
+                                ariaLabel="circles-with-bar-loading"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                            :
+                            <>
+                                <div class="perfil__img-nome">
+                                    <img className="" src={`http://localhost:3333/files/${banner}`} alt="Foto do Perfil" />
+                                    <h4>
+                                        {nome}
+                                    </h4>
+                                </div>
+                                <div className="perfil__text">
+                                    <label>Email: </label>
+                                    <input
+                                        type="text"
+                                        value={email}
+                                        disabled
+                                    />
+                                    <label>CEP: </label>
+                                    <input
+                                        type="text"
+                                        value={cep}
+                                        disabled
+                                    />
+                                    <label>Rua: </label>
+                                    <input
+                                        type="text"
+                                        value={rua}
+                                        disabled
+                                    />
+                                    <label>Numero: </label>
+                                    <input
+                                        type="text"
+                                        value={numero}
+                                        disabled
+                                    />
+                                    <label>Bairro: </label>
+                                    <input
+                                        type="text"
+                                        value={bairro}
+                                        disabled
+                                    />
+                                    <label>Cidade: </label>
+                                    <input
+                                        type="text"
+                                        value={cidade}
+                                        disabled
+                                    />
+                                    <label>Estado: </label>
+                                    <input
+                                        type="text"
+                                        value={uf}
+                                        disabled
+                                    />
+                                    <a href="/editar-perfil" className="">Editar informações</a>
+                                </div>
+                            </>
+                        }
+                    </div>
                 </section>
                 <a href="/" className="back"><IoMdArrowRoundBack /></a>
             </div>
