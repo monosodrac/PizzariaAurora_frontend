@@ -81,10 +81,14 @@ export default function CadCliente() {
 
     useEffect(() => {
         async function mostrarCep() {
-            setRua(dadosViaCep.rua);
-            setBairro(dadosViaCep.bairro);
-            setCidade(dadosViaCep.cidade);
-            setUf(dadosViaCep.uf);
+            if(!dadosViaCep) {
+                return
+            } else {
+                setRua(dadosViaCep.rua);
+                setBairro(dadosViaCep.bairro);
+                setCidade(dadosViaCep.cidade);
+                setUf(dadosViaCep.uf);
+            }
         };
         mostrarCep();
     }, [dadosViaCep]);
@@ -119,7 +123,7 @@ export default function CadCliente() {
                         type="text"
                         placeholder='Digite sua rua'
                         value={rua}
-                        onChange={(e) => setRua({ ...dadosViaCep, rua: e.target.value })}
+                        onChange={(e) => setRua(e.target.value)}
                     />
                     <input
                         type="text"
@@ -131,19 +135,19 @@ export default function CadCliente() {
                         type="text"
                         placeholder='Digite seu bairro'
                         value={bairro}
-                        onChange={(e) => setBairro({ ...dadosViaCep, bairro: e.target.value })}
+                        onChange={(e) => setBairro(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder='Digite sua cidade'
                         value={cidade}
-                        onChange={(e) => setCidade({ ...dadosViaCep, cidade: e.target.value })}
+                        onChange={(e) => setCidade(e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder='Digite seu estado'
                         value={uf}
-                        onChange={(e) => setUf({ ...dadosViaCep, uf: e.target.value })}
+                        onChange={(e) => setUf(e.target.value)}
                     />
                     <input
                         type="password"
