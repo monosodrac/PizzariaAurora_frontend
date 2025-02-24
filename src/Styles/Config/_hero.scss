@@ -45,6 +45,10 @@
         .btn-hero img {
             height: 6rem;
             width: 21rem;
+
+            &:hover {
+                transform: scale(1.02);
+            }
         }
     }
 }
