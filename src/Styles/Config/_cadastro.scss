@@ -50,6 +50,11 @@
     height: 100%;
     width: 100%;
 
+    .container {
+        margin-top: 2rem;
+        background-color: variaveis.$corPrincipal
+    }
+
     form {
         @include formDef();
 
@@ -96,6 +101,11 @@
     background-color: #fff;
     height: 100%;
     width: 100%;
+
+    .container {
+        margin-top: 2rem;
+        background-color: variaveis.$corPrincipal
+    }
 
     form {
         @include formDef();
