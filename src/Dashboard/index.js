@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { TbCircleArrowUp } from "react-icons/tb";
 
-import Header from '../Components/Header/Autenticado/Header';
+import Header from '../Components/Header';
 import Hero from "../Components/Inicio/Hero";
 import Destaques from "../Components/Inicio/Destaques";
-import Contato from "../Components/Footer/Main/Contato";
+import Contato from "../Components/Footer";
 
 import "../Styles/main.scss";
 

@@ -57,7 +57,7 @@ export default function DashBoard() {
                 toastId: 'ToastId'
             });
         };
-    }, [token]);
+    }, [token, id]);
 
     return (
         <>
@@ -89,48 +89,27 @@ export default function DashBoard() {
                                     </h4>
                                 </div>
                                 <div className="perfil__text">
-                                    <label>Email: </label>
-                                    <input
-                                        type="text"
-                                        value={email}
-                                        disabled
-                                    />
-                                    <label>CEP: </label>
-                                    <input
-                                        type="text"
-                                        value={cep}
-                                        disabled
-                                    />
-                                    <label>Rua: </label>
-                                    <input
-                                        type="text"
-                                        value={rua}
-                                        disabled
-                                    />
-                                    <label>Numero: </label>
-                                    <input
-                                        type="text"
-                                        value={numero}
-                                        disabled
-                                    />
-                                    <label>Bairro: </label>
-                                    <input
-                                        type="text"
-                                        value={bairro}
-                                        disabled
-                                    />
-                                    <label>Cidade: </label>
-                                    <input
-                                        type="text"
-                                        value={cidade}
-                                        disabled
-                                    />
-                                    <label>Estado: </label>
-                                    <input
-                                        type="text"
-                                        value={uf}
-                                        disabled
-                                    />
+                                    <p>
+                                        <label><b>Email:</b></label> {email}
+                                    </p>
+                                    <p>
+                                        <label>CEP:</label> {cep}
+                                    </p>
+                                    <p>
+                                        <label>Rua:</label> {rua}
+                                    </p>
+                                    <p>
+                                        <label>Numero:</label> {numero}
+                                    </p>
+                                    <p>
+                                        <label>Bairro:</label> {bairro}
+                                    </p>
+                                    <p>
+                                        <label>Cidade:</label> {cidade}
+                                    </p>
+                                    <p>
+                                        <label>Estado:</label> {uf}
+                                    </p>
                                     <a href="/editar-perfil" className="">Editar informações</a>
                                 </div>
                             </>

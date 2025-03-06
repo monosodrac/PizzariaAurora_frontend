@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AutenticadoContexto } from "../../Contexts/authContexts";
 import apiLocal from "../../Api/apiLocal";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { CirclesWithBar } from 'react-loader-spinner'
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import Contato from "../Footer/Main/Contato";
+import Contato from "../Footer";
 
 export default function Cardapio() {
     const { verificarToken, token } = useContext(AutenticadoContexto);
@@ -64,9 +64,13 @@ export default function Cardapio() {
                                         <div className="cardapio__tabs__item" key={index}>
                                             <img className="" src={`http://localhost:3333/files/${item.banner}`} alt={item.nome} />
                                             <h5 className="">Pizza: {item.nome}</h5>
-                                            <p>
-                                                Descrição: {item.descricao}
-                                            </p>
+                                            {
+                                                item.descricao === ''
+                                                    ?
+                                                    <p></p>
+                                                    :
+                                                    <p>Descrição: {item.descricao}</p>
+                                            }
                                             <p>
                                                 Preço: R$
                                                 {item.preco}

@@ -22,7 +22,7 @@ export default function Login() {
             await loginEntrada(email, password);
             nagivate("/")
         } catch (err) {
-            
+            nagivate("/login")
         };
     };
 

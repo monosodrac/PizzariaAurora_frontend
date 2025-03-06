@@ -4,10 +4,10 @@ import { AutenticadoContexto } from "../Contexts/authContexts";
 import { CgProfile } from "react-icons/cg";
 import { TbCircleArrowUp } from "react-icons/tb";
 
-import Header from '../Components/Header/NaoAutenticado/Header';
+import Header from '../Components/Header';
 import Hero from "../Components/Inicio/Hero";
 import Destaques from "../Components/Inicio/Destaques";
-import Contato from "../Components/Footer/Main/Contato";
+import Contato from "../Components/Footer";
 
 import "../Styles/main.scss";
 

@@ -2,8 +2,8 @@
 
 .destaques__list {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    grid-template-columns: 1fr 3fr;
     
     &__item {
         display: flex;
@@ -14,8 +14,9 @@
         img {
             display: flex;
             justify-content: center;
-            max-width: 60%;
+            max-width: 100%;
             align-items: center;
+            border-radius: 10px;
         }
 
         p {
