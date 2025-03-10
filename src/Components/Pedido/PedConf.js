@@ -51,9 +51,15 @@ export default function PedidoConf() {
                         <h4>
                             Pizza: {nome}
                         </h4>
-                        <p>
-                            Descrição: {descricao}
-                        </p>
+                        {
+                            descricao === ''
+                                ?
+                                <></>
+                                :
+                                <p>
+                                    Descrição: {descricao}
+                                </p>
+                        }
                         <p>
                             Valor: R${preco}
                         </p>

@@ -54,28 +54,21 @@ export default function CadProdutos() {
     return (
         <div className="cadastro">
             <div className="hsection">
-                <h2>Cadastro</h2>
+                <h2>Cadastro de Produtos</h2>
             </div>
             <section id="produtos">
                 <div className="row">
-                    <nav className="nav nav-pills flex-column col-lg-2 col-md-12">
-                        <button data-bs-toggle="tab" data-bs-target="#aba1" className="nav-link active" type="button">Cadastro</button>
-                    </nav>
-                    <div className="tab-content col-lg-10">
+                    <div className="tab-content">
                         <div className="tab-pane active" id="aba1">
                             <div className="container">
                                 <form className="form__Prod" onSubmit={cadastrarProduto}>
-                                    <input
-                                        type="file"
-                                        accept="image/jpeg, image/png"
-                                        onChange={pegarImagem}
-                                    />
                                     <label>
                                         Nome do produto:
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
+                                        autoFocus
                                         value={nome}
                                         onChange={(e) => setNome(e.target.value)}
                                     />
@@ -96,6 +89,12 @@ export default function CadProdutos() {
                                         name="Preço"
                                         value={preco}
                                         onChange={(e) => setPreco(e.target.value)}
+                                    />
+                                    <input
+                                        id="image__input"
+                                        type="file"
+                                        accept="image/jpeg, image/png"
+                                        onChange={pegarImagem}
                                     />
                                     <button className="btn" type="submit">Enviar</button>
                                 </form>

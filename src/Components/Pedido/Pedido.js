@@ -57,9 +57,15 @@ export default function Pedido() {
                         <h4>
                             Pizza: {nome}
                         </h4>
-                        <p>
-                            Descrição: {descricao}
-                        </p>
+                        {
+                            descricao === ''
+                                ?
+                                <></>
+                                :
+                                <p>
+                                    Descrição: {descricao}
+                                </p>
+                        }
                         <p>
                             Preço: R${preco}
                         </p>

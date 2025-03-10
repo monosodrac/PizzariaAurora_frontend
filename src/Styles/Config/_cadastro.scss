@@ -25,9 +25,9 @@
     border: none;
 
     &:hover {
-    background-color: variaveis.$corSecundaria;
-    color: variaveis.$corPrincipal;
-    box-shadow: none;
+        background-color: variaveis.$corSecundaria;
+        color: variaveis.$corPrincipal;
+        box-shadow: none;
     }
 }
 
@@ -110,8 +110,18 @@
     form {
         @include formDef();
 
+        label {
+            font-weight: bold;
+            color: variaveis.$corSecundaria;
+        }
+        
         input {
             @include formComps();
+        }
+        
+        #image__input {
+            font-weight: bold;
+            color: variaveis.$corSecundaria;
         }
 
         button {
@@ -144,7 +154,7 @@
         background-color: variaveis.$corSecundaria;
         color: variaveis.$corTitle;
     }
-    
+
     .nav-link {
         color: variaveis.$corSecundaria;
         box-shadow: none;
@@ -168,7 +178,7 @@
             font-family: sans-serif;
             font-size: 1.2rem;
             margin: .1rem 0;
-            
+
             b {
                 font-family: sans-serif;
 
