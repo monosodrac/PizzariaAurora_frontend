@@ -1,0 +1,23 @@
+.pedido {
+    .container {
+        display: flex;
+        flex-direction: column;
+        
+        img {
+            width: 20rem;
+            height: 20rem;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        h2 {
+            margin: 2rem 0;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+    }
+}

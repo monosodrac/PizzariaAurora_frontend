@@ -35,16 +35,16 @@ export default function PedidoConf() {
                 toastId: 'ToastId'
             });
         };
-    }, []);
+    }, [id, token]);
 
     return (
         <div>
-            <div className="hsection" id="dlvr">
+            <div className="hsection">
                 <h2>Confirmação do Pedido</h2>
             </div>
-            <section className="delivery">
+            <section className="pedido">
                 <div className="container">
-                    <div className="delivery__text">
+                    <div className="pedido__text">
                         <h2>
                             Pedido Confirmado
                         </h2>

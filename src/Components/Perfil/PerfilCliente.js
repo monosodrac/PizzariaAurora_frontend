@@ -93,22 +93,22 @@ export default function DashBoard() {
                                         <label><b>Email:</b></label> {email}
                                     </p>
                                     <p>
-                                        <label>CEP:</label> {cep}
+                                        <label><b>CEP:</b></label> {cep}
                                     </p>
                                     <p>
-                                        <label>Rua:</label> {rua}
+                                        <label><b>Rua:</b></label> {rua}
                                     </p>
                                     <p>
-                                        <label>Numero:</label> {numero}
+                                        <label><b>Numero:</b></label> {numero}
                                     </p>
                                     <p>
-                                        <label>Bairro:</label> {bairro}
+                                        <label><b>Bairro:</b></label> {bairro}
                                     </p>
                                     <p>
-                                        <label>Cidade:</label> {cidade}
+                                        <label><b>Cidade:</b></label> {cidade}
                                     </p>
                                     <p>
-                                        <label>Estado:</label> {uf}
+                                        <label><b>Estado:</b></label> {uf}
                                     </p>
                                     <a href="/editar-perfil" className="">Editar informações</a>
                                 </div>

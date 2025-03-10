@@ -6,8 +6,6 @@ import { toast } from 'react-toastify';
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import Pizza from "../../Styles/Imgs/pizza1-1.jpg";
-
 export default function Pedido() {
 
     const navigate = useNavigate();
@@ -41,7 +39,7 @@ export default function Pedido() {
                 toastId: 'ToastId'
             });
         };
-    }, []);
+    }, [id, token]);
 
     function confPed() {
         navigate(`/pedido-confirmado/${id}`)
@@ -49,13 +47,13 @@ export default function Pedido() {
 
     return (
         <div>
-            <div className="hsection" id="dlvr">
+            <div className="hsection">
                 <h2>Pedido</h2>
             </div>
-            <section className="delivery">
+            <section className="pedido">
                 <div className="container">
                     <img src={`http://localhost:3333/files/${imagem}`} alt={descricao} />
-                    <div className="delivery__text">
+                    <div className="pedido__text">
                         <h4>
                             Pizza: {nome}
                         </h4>

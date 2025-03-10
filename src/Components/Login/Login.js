@@ -13,16 +13,16 @@ export default function Login() {
     const nagivate = useNavigate()
 
     async function dadosLogin(e) {
-        e.preventDefault()
+        e.preventDefault();
         if (!email || !password) {
             toast.warning('Preencha todos os campos');
             return;
         };
         try {
             await loginEntrada(email, password);
-            nagivate("/")
+            nagivate("/");
         } catch (err) {
-            nagivate("/login")
+            nagivate("/login");
         };
     };
 
