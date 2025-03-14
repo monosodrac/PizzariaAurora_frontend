@@ -69,7 +69,7 @@ export default function Cardapio() {
                                                     ?
                                                     <p></p>
                                                     :
-                                                    <p>Descrição: {item.descricao}</p>
+                                                    <p title={item.descricao}>Descrição: {item.descricao}</p>
                                             }
                                             <p>
                                                 Preço: R$

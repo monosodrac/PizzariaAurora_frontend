@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AutenticadoContexto } from '../../Contexts/authContexts';
 
-import Logo from '../../Styles/Imgs/logo.png';
+import Logo from '../../Styles/Imgs/logo-removebg-preview.png';
 
 export default function HeaderNaoAutenticado() {
     const { verificarToken, autenticado } = useContext(AutenticadoContexto);
@@ -19,7 +19,9 @@ export default function HeaderNaoAutenticado() {
         <div>
             <header className="navbar navbar-expand-lg sticky-top" id='head'>
                 <div className="container">
-                    <img className="navbar-brand m-0 section-title" src={Logo} alt="Pizzaria Aurora" />
+                    <a href='/'>
+                        <img className="navbar-brand m-0 section-title" src={Logo} alt="Pizzaria Aurora" />
+                    </a>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
                         <span className="navbar-toggler-icon"></span>
                     </button>

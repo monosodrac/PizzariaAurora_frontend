@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 
+import Logo from '../../Styles/Imgs/logo-removebg-preview.png';
+
 export default function Login() {
     const { loginEntrada } = useContext(AutenticadoContexto);
 
@@ -28,11 +30,9 @@ export default function Login() {
 
     return (
         <div className="login">
-            <div className="hsection">
-                <h2>Login</h2>
-            </div>
             <div className="container">
                 <form onSubmit={dadosLogin}>
+                    <img className="navbar-brand m-0 section-title" src={Logo} alt="Pizzaria Aurora" />
                     <input
                         type="email"
                         autoFocus

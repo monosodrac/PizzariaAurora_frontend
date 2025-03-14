@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Logo from '../../Styles/Imgs/logo.png';
-import Cachorrinho from '../../Styles/Imgs/cachorrinho.jpg';
 import Iframe from "react-iframe";
+
+import Logo from '../../Styles/Imgs/logo-removebg-preview.png';
+import Cachorrinho from '../../Styles/Imgs/cachorrinho.jpg';
 
 export default function Contato() {
     const [logo, setLogo] = useState(Logo);

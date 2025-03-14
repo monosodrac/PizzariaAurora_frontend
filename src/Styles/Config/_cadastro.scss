@@ -45,41 +45,6 @@
     bottom: 6rem;
 }
 
-.login {
-    background-color: #fff;
-    height: 100%;
-    width: 100%;
-
-    .container {
-        margin-top: 2rem;
-        background-color: variaveis.$corPrincipal
-    }
-
-    form {
-        @include formDef();
-
-        input {
-            @include formComps();
-        }
-
-        .cad-res {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 .5rem;
-        }
-
-        a {
-            color: #000
-        }
-
-        button {
-            @include formComps();
-            @include btn();
-            font-size: 1.5rem;
-        }
-    }
-}
-
 .back {
     display: block;
     margin: 2.8vw;

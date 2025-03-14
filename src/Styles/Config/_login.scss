@@ -1,0 +1,76 @@
+@use 'variaveis';
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #000;
+        border-radius: 10px;
+        width: 40rem;
+        background-color: variaveis.$corPrincipal;
+        padding: 2rem;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        text-align: center;
+
+        img {
+            height: 15rem;
+            width: 15rem;
+        }
+
+        input {
+            margin: 1rem 0;
+            padding: .5rem;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+        }
+
+        .cad-res {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        a {
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        button {
+            margin: auto;
+            padding: 1rem;
+            border: 3px solid variaveis.$corSecundaria;
+            border-radius: 3rem;
+            width: 50%;
+            text-align: center;
+            font-size: 1.5rem;
+            background-color: variaveis.$corPrincipal;
+            color: variaveis.$corSecundaria;
+            
+            &:hover {
+                background-color: variaveis.$corSecundaria;
+                color: variaveis.$corPrincipal;
+                box-shadow: none;
+            }
+        }
+    }
+}
