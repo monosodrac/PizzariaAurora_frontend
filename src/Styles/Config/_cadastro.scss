@@ -1,100 +1,60 @@
 @use 'variaveis';
 
-@mixin formComps() {
-    margin: 1rem 0;
-    padding: 1.5rem;
-    width: 100%;
-}
-
-@mixin formDef() {
-    display: flex;
-    flex-direction: column;
-    margin: 5.6vw;
-    width: 100%;
-    text-align: center;
-}
-
-@mixin btn() {
-    display: block;
-    width: 100%;
-    background-color: variaveis.$corPrincipal;
-    color: variaveis.$corSecundaria;
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 3rem;
-    border: none;
-
-    &:hover {
-        background-color: variaveis.$corSecundaria;
-        color: variaveis.$corPrincipal;
-        box-shadow: none;
-    }
-}
-
-.Modal {
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
-.Overlay {
-    position: fixed;
-    top: 6rem;
-    left: 15rem;
-    right: 15rem;
-    bottom: 6rem;
-}
-
-.back {
-    display: block;
-    margin: 2.8vw;
-    color: variaveis.$corSecundaria;
-    font-size: 4rem;
-
-    svg {
-        position: fixed;
-        bottom: 2rem;
-        left: 2rem;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-}
-
 .cadastro {
-    background-color: #fff;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 
     .container {
-        margin-top: 2rem;
-        background-color: variaveis.$corPrincipal
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        border: 3px solid #000;
+        border-radius: 10px;
+        width: 40rem;
+        background-color: variaveis.$corPrincipal;
+        padding: 2rem;
     }
 
     form {
-        @include formDef();
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        text-align: center;
+        img {
+            height: 15rem;
+            width: 15rem;
+        }
 
-        label {
-            font-weight: bold;
-            color: variaveis.$corSecundaria;
-        }
-        
         input {
-            @include formComps();
-        }
-        
-        #image__input {
-            font-weight: bold;
-            color: variaveis.$corSecundaria;
+            margin: 1rem 0;
+            padding: .5rem;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
         }
 
         button {
-            @include formComps();
-            @include btn();
+            margin: auto;
+            padding: 1rem;
+            border: 3px solid variaveis.$corSecundaria;
+            border-radius: 3rem;
+            width: 50%;
+            text-align: center;
             font-size: 1.5rem;
+            background-color: variaveis.$corPrincipal;
+            color: variaveis.$corSecundaria;
+            
+            &:hover {
+                background-color: variaveis.$corSecundaria;
+                color: variaveis.$corPrincipal;
+                box-shadow: none;
+            }
         }
-
     }
 
     a {
@@ -110,6 +70,23 @@
             &:hover {
                 transform: scale(1.2);
             }
+        }
+    }
+}
+
+.back {
+    display: block;
+    margin: 2.8vw;
+    color: variaveis.$corSecundaria;
+    font-size: 4rem;
+
+    svg {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }

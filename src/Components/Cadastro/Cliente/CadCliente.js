@@ -95,14 +95,12 @@ export default function CadCliente() {
 
     return (
         <div className="cadastro">
-            <div className="hsection">
-                <h2>Cadastro</h2>
-            </div>
             <div className="container">
                 <form className="form__client" onSubmit={cadastroUsuarios}>
                     <input
                         type="text"
                         placeholder='Digite seu Nome'
+                        autoFocus
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
                     />

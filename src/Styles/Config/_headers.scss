@@ -6,7 +6,7 @@ header {
 
     a {
         text-decoration: none;
-        
+
         h1 {
             font-family: serif;
             color: variaveis.$corSecundaria;
@@ -17,30 +17,22 @@ header {
         height: 4.25rem;
         width: 5.6rem;
     }
-    
+
     .navbar-brand {
         padding: 0;
     }
-    
+
     li {
         display: inline;
         list-style: none;
-        
-        a {
-            text-decoration: none;
+
+        .nav-link {
             color: variaveis.$corSecundaria;
-            
-            &:hover {
-                background-color: variaveis.$corFundo;
-            }
-        }
-        
-        button {
             text-decoration: none;
-            color: variaveis.$corSecundaria;
-            
+
             &:hover {
-                background-color: variaveis.$corFundo;
+                background-color: variaveis.$corSecundaria;
+                color: variaveis.$corPrincipal;
             }
         }
     }
@@ -54,7 +46,7 @@ header {
     header {
         background-color: variaveis.$corPrincipal;
         width: 100%;
-        
+
         #log {
             display: block;
             cursor: pointer;

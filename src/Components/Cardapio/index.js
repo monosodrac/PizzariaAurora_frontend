@@ -7,6 +7,7 @@ import { CirclesWithBar } from 'react-loader-spinner'
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
+import Header from '../Header'
 import Contato from "../Footer";
 
 export default function Cardapio() {
@@ -37,10 +38,8 @@ export default function Cardapio() {
     }, [token]);
 
     return (
-        <div>
-            <div className="hsection" id="cont">
-                <h2>Cardápio</h2>
-            </div>
+        <>
+            <Header />
             <section id="cardapio" className="cardapio">
                 <div class="container">
                     {load === false ?
@@ -85,6 +84,6 @@ export default function Cardapio() {
             </section>
             <a href="/" className="back"><IoMdArrowRoundBack /></a>
             <Contato />
-        </div>
+        </>
     );
 };

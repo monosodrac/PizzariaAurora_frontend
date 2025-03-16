@@ -16,6 +16,7 @@
         h2 {
             margin-bottom: 1.5rem;
         } 
+
         p {
             margin-bottom: 3.6rem;
         }
@@ -41,15 +42,36 @@
             justify-content: center;
             text-align: center;
         }
-            
-        .btn-hero img {
-            height: 6rem;
-            width: 21rem;
+        
+        .btn-hero {
+            position: relative;
+            top: 0;
+            left: 25%;
+            border: 8px solid variaveis.$corTitle;
+            width: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: variaveis.$corPrincipal;
+            color: variaveis.$corSecundaria;
 
             &:hover {
                 transform: scale(1.02);
             }
+
+            p {
+                margin: 0;
+                padding: 1.5rem;
+            }
         }
+            
+        // .btn-hero img {
+        //     height: 6rem;
+        //     width: 21rem;
+
+        //     &:hover {
+        //         transform: scale(1.02);
+        //     }
+        // }
     }
 }
 
@@ -81,9 +103,13 @@
                 font-size: 1.2rem;
             }
 
-            .btn-hero img {
+            .btn-hero {
                 display: none;
             }
+
+            // .btn-hero img {
+            //     display: none;
+            // }
         }
     }
 }
