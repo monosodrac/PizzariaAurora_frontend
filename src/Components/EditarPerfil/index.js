@@ -96,64 +96,79 @@ export default function EditarPerfil() {
             </div>
             <div className="perfil">
                 <div class="container">
-                    <form onSubmit={enviarAlteracao}>
-                        <label>Nome: </label>
-                        <input
-                            type="text"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-                        />
-                        <label>Email: </label>
-                        <input
-                            type="text"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <label>CEP: </label>
-                        <input
-                            type="text"
-                            value={cep}
-                            onChange={(e) => setCep(e.target.value)}
-                        />
-                        <label>Rua: </label>
-                        <input
-                            type="text"
-                            value={rua}
-                            onChange={(e) => setRua(e.target.value)}
-                        />
-                        <label>Número: </label>
-                        <input
-                            type="text"
-                            value={numero}
-                            onChange={(e) => setNumero(e.target.value)}
-                        />
-                        <label>Bairro: </label>
-                        <input
-                            type="text"
-                            value={bairro}
-                            onChange={(e) => setBairro(e.target.value)}
-                        />
-                        <label>Cidade: </label>
-                        <input
-                            type="text"
-                            value={cidade}
-                            onChange={(e) => setCidade(e.target.value)}
-                        />
-                        <label>Estado: </label>
-                        <input
-                            type="text"
-                            value={uf}
-                            onChange={(e) => setUf(e.target.value)}
-                        />
-                        <label>Senha: </label>
-                        <input
-                            disabled
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                    <form className='perfil__text' onSubmit={enviarAlteracao}>
+                        <p>
+                            <label>Nome: </label>
+                            <input
+                                type="text"
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                            />
+                        </p>
+                        <p>
+                            <label>Email: </label>
+                            <input
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </p>
+                        <div className="perfil__text__item2">
+                            <p>
+                                <label>Rua: </label>
+                                <input
+                                    type="text"
+                                    value={rua}
+                                    onChange={(e) => setRua(e.target.value)}
+                                />
+                            </p>
+                            <p>
+                                <label>Número: </label>
+                                <input
+                                    type="text"
+                                    value={numero}
+                                    onChange={(e) => setNumero(e.target.value)}
+                                />
+                            </p>
+                        </div>
+                        <div className="perfil__text__item3">
+                            <p>
+                                <label>Bairro: </label>
+                                <input
+                                    type="text"
+                                    value={bairro}
+                                    onChange={(e) => setBairro(e.target.value)}
+                                />
+                            </p>
+                            <p>
+                                <label>Cidade: </label>
+                                <input
+                                    type="text"
+                                    value={cidade}
+                                    onChange={(e) => setCidade(e.target.value)}
+                                />
+                            </p>
+                            <p>
+                                <label>Estado: </label>
+                                <input
+                                    type="text"
+                                    value={uf}
+                                    onChange={(e) => setUf(e.target.value)}
+                                />
+                            </p>
+                            <p>
+                                <label>CEP: </label>
+                                <input
+                                    type="text"
+                                    value={cep}
+                                    onChange={(e) => setCep(e.target.value)}
+                                />
+                            </p>
+                        </div>
                         <button className='btn' type='submit'>Enviar</button>
-                        <a href="/perfil" className="back"><IoMdArrowRoundBack /></a>
+                        <a href="/perfil" className="btn">
+                            Voltar
+                        </a>
                     </form>
                 </div>
             </div>

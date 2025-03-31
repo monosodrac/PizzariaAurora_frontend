@@ -4,6 +4,7 @@
     margin: 5rem;
 
     .container {
+        display: block;
         justify-content: space-around;
         align-items: start;
     }
@@ -46,6 +47,35 @@
             &:hover {
                 background-color: variaveis.$corSecundaria;
             }
+        }
+
+        button {
+            padding: 1rem;
+            border-radius: 20px;
+            color: variaveis.$corPrincipal;
+            text-decoration: none;
+
+            &:hover {
+                background-color: variaveis.$corSecundaria;
+            }
+        }
+
+        input {
+            border-radius: 10px;
+            width: 100%;
+            padding: 0 .3rem;
+        }
+        
+        &__item2 {
+            display: grid;
+            grid-template-columns: 6fr 1fr;
+            gap: 2%;
+        }
+        
+        &__item3 {
+            display: grid;
+            grid-template-columns: 3fr 3fr 1fr 2fr;
+            gap: 2%;
         }
     }
 }
