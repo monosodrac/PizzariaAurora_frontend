@@ -21,7 +21,7 @@ export default function Autenticados() {
                     <Route path='/cardapio' element={<Cardapio />} />
                     <Route path='/perfil' element={<Perfil />} />
                     <Route path='/editar-perfil' element={<EditarPerfil />} />
-                    <Route path='/pedido/:id' element={<Pedido />} />
+                    <Route path='/pedido' element={<Pedido />} />
                     <Route path='/pedido-confirmado/:id' element={<PedConf />} />
 
                     <Route path='/maintenance' element={<Maintenance />} />

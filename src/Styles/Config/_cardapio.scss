@@ -13,6 +13,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 3%;
         margin: 2rem 0;
+        color: variaveis.$corTitle;
 
         @media (max-width: 991px) {
             grid-template-columns: repeat(2, 1fr);
@@ -20,12 +21,6 @@
 
         @media (max-width: 767px) {
             display: block;
-        }
-
-
-        a {
-            text-decoration: none;
-            color: variaveis.$corTitle;
         }
 
         &__item {
@@ -41,10 +36,7 @@
                 margin: 2rem 0;
             }
 
-            &:hover {
-                background-color: lighten(variaveis.$corSecundaria, 3%);
-            }
-
+            
             img {
                 margin-bottom: 1rem;
                 padding: 0;
@@ -52,15 +44,28 @@
                 height: 15rem;
                 border-radius: 10px 10px 0 0;
             }
-
+            
             h5 {
                 font-weight: bold;
                 height: 3rem;
             }
-
+            
             p {
                 font-weight: bold;
                 height: 3rem;
+            }
+            
+            button {
+                margin: 1rem;
+                padding: 1rem;
+                border-radius: 10px;
+                font-weight: bold;
+                background-color: variaveis.$corPrincipal;
+                color: variaveis.$corSecundaria;
+                
+                &:hover {
+                    background-color: lighten(variaveis.$corPrincipal, 3%);
+                }
             }
         }
     }

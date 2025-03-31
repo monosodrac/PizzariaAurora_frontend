@@ -1,79 +1,190 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { AutenticadoContexto } from "../../Contexts/authContexts";
-import { useNavigate, useParams } from 'react-router-dom';
-import apiLocal from '../../Api/apiLocal';
+import React, { useState, useContext, useEffect } from 'react';
+import { AutenticadoContexto } from '../../Contexts/authContexts';
+import Modal from 'react-modal';
 import { toast } from 'react-toastify';
+import apiLocal from '../../Api/apiLocal';
+import Header from '../Header';
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function Pedido() {
-
-    const navigate = useNavigate();
-    const { id } = useParams();
-    const [nome, setNome] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [preco, setPreco] = useState('');
-    const [imagem, setImagem] = useState(null);
-
     const { verificarToken, token } = useContext(AutenticadoContexto);
     verificarToken();
 
+    const [dados, setDados] = useState(['']);
+    const [carrinhoAberto, setCarrinhoAberto] = useState(false);
+    const [modalAberto, setModalAberto] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [dadosPedido, setDadosPedido] = useState(['']);
+
+
     useEffect(() => {
         try {
-            async function consultarProdutos() {
-                const resposta = await apiLocal.post('/ConsultarProdutosUnico', {
-                    id
-                }, {
+            async function buscarPedidosCliente() {
+                const resposta = await apiLocal.get('/BuscarPedidosCliente', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
-                })
-                setNome(resposta.data.nome)
-                setDescricao(resposta.data.descricao)
-                setPreco(resposta.data.preco)
-                setImagem(resposta.data.banner)
+                });
+                setDados(resposta.data);
             };
-            consultarProdutos();
+            buscarPedidosCliente();
         } catch (err) {
-            toast.error('Erro ao Comunicar com o Servidor', {
+            toast.error(err.response.data.error, {
                 toastId: 'ToastId'
             });
         };
-    }, [id, token]);
+        // eslint-disable-next-line
+    }, [dados]);
 
-    function confPed() {
-        navigate(`/pedido-confirmado/${id}`)
-    }
+    useEffect(() => {
+        const nPedidoU = localStorage.getItem('@npedido');
+        const pedidoU = JSON.parse(nPedidoU);
+        if (pedidoU !== null) {
+            setCarrinhoAberto(true);
+        };
+    }, []);
+
+    function reabrirCarrinho(idd) {
+        const produto = dados.filter((item) => item.id === idd);
+        const pedido1 = String(produto.map((item) => item.n_pedido));
+        const id1 = String(produto.map((item) => item.id));
+        localStorage.setItem('@npedido', JSON.stringify(pedido1));
+        localStorage.setItem('@id_pedido', JSON.stringify(id1));
+        setCarrinhoAberto(true);
+    };
+
+    async function apagarCarrinho(idd) {
+        try {
+            const resposta = await apiLocal.delete(`/ApagarCarrinho/${idd}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            toast.success(resposta.data.dados, {
+                toastId: 'ToastId'
+            });
+            localStorage.removeItem('@npedido');
+            localStorage.removeItem('@id_pedido');
+        } catch (err) {
+            toast.error(err.response.data.error, {
+                toastId: 'ToastId'
+            });
+        };
+    };
+
+    async function visualizarPedido(idd) {
+        try {
+            const id = idd;
+            const resposta = await apiLocal.post('/visualizaPedidoClienteUnico', {
+                id
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            if (resposta.data.id) {
+                setDadosPedido(resposta.data);
+                setLoading(true);
+                setModalAberto(true);
+            } else {
+                setLoading(false);
+            };
+        } catch (err) {
+            toast.error(err.response.data.error, {
+                toastId: 'ToastId'
+            });
+        };
+    };
+
+    function fecharModal() {
+        setModalAberto(false);
+        setLoading(false);
+    };
 
     return (
-        <div>
-            <div className="hsection">
-                <h2>Pedido</h2>
-            </div>
-            <section className="pedido">
-                <div className="container">
-                    <img src={`http://localhost:3333/files/${imagem}`} alt={descricao} />
-                    <div className="pedido__text">
-                        <h4>
-                            Pizza: {nome}
-                        </h4>
-                        {
-                            descricao === ''
-                                ?
-                                <></>
-                                :
-                                <p>
-                                    Descrição: {descricao}
-                                </p>
-                        }
-                        <p>
-                            Preço: R${preco}
-                        </p>
-                        <button onClick={confPed} className="btn" type="submit">Confirmar Pedido</button>
-                    </div>
+            <>
+                <Header />
+                <div className='carrinho'>
+                    <h1>Carrinho</h1>
+                    <table className='dadosTabelasPedidos'>
+                        <thead>
+                            <tr>
+                                <th>Numero Pedido</th>
+                                <th>Status Pedido</th>
+                                <th>Ações</th>
+                            </tr>
+                            {dados.map((item) => {
+                                return (
+                                    <>
+                                        <tr>
+                                            <td>{item.n_pedido}</td>
+                                            <td>{item.status}</td>
+                                            {
+                                                carrinhoAberto === true
+                                                    ?
+                                                    <>
+                                                        <td><button onClick={() => visualizarPedido(item.id)}>Visualizar</button>
+                                                            {
+                                                                item.status !== 'Finalizado'
+                                                                    ?
+                                                                    <button onClick={() => apagarCarrinho(item.id)}>Apagar</button>
+                                                                    :
+                                                                    <button disabled style={{ opacity: 0.5, cursor: "not-allowed" }}>Apagar</button>
+                                                            }
+                                                        </td>
+                                                    </>
+                                                    :
+                                                    <td><button onClick={() => reabrirCarrinho(item.id)}>Reabrir Carrinho</button></td>
+                                            }
+                                        </tr>
+                                    </>
+                                )
+                            })}
+                        </thead>
+                    </table>
+                    {loading === true && (
+                        <Modal
+                            className="Modal"
+                            isOpen={modalAberto}
+                        >
+                            <div className='conteinerModal'>
+                                <h1>Visualização do Pedido</h1>
+                                <table className='dadosTabelasPedidosModal'>
+                                    <thead>
+                                        <tr key="">
+                                            <th>Numero Pedido</th>
+                                            <th>Nome Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Valor Unitario</th>
+                                            <th>Valor Total</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                        {dadosPedido.itens.map((item) => {
+                                            return (
+                                                <>
+                                                    <tr>
+                                                        <td>{dadosPedido.n_pedido}</td>
+                                                        <td>{item.produtos.nome}</td>
+                                                        <td>{item.quantidade}</td>
+                                                        <td>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.valor)}</td>
+                                                        <td>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.valor * item.quantidade)}</td>
+                                                        <td>Apagar</td>
+                                                    </tr>
+                                                </>
+                                            )
+                                        })}
+                                    </thead>
+                                </table>
+                                <div className='botoesAcao'>
+                                    <button className='botaoEnviarModal'>Fazer Pedido</button>
+                                    <a href='/frete'>Frete</a>
+                                    <button className='botaoSairModal' onClick={fecharModal}>Fechar Pedido</button>
+                                </div>
+                            </div>
+                        </Modal>
+                    )}
                 </div>
-            </section>
-            <a href="/cardapio" className="back"><IoMdArrowRoundBack /></a>
-        </div>
-    )
-}
+            </>
+        )
+    }

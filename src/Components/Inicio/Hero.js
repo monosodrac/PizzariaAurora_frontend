@@ -1,6 +1,5 @@
 import React from "react";
 import BgHero from "../../Styles/Imgs/bg-hero.png";
-import BtnHero from "../../Styles/Imgs/btn-hero.png";
 
 export default function Hero() {
   return (

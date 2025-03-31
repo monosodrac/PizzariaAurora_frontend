@@ -58,17 +58,18 @@
         button {
             margin: auto;
             padding: 1rem;
-            border: 3px solid variaveis.$corSecundaria;
+            border: 3px solid transparent;
             border-radius: 3rem;
             width: 50%;
             text-align: center;
             font-size: 1.5rem;
-            background-color: variaveis.$corPrincipal;
-            color: variaveis.$corSecundaria;
+            background-color: variaveis.$corSecundaria;
+            color: variaveis.$corPrincipal;
             
             &:hover {
-                background-color: variaveis.$corSecundaria;
-                color: variaveis.$corPrincipal;
+                border-color: variaveis.$corSecundaria;
+                background-color: variaveis.$corPrincipal;
+                color: variaveis.$corSecundaria;
                 box-shadow: none;
             }
         }

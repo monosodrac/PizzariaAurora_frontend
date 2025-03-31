@@ -46,6 +46,11 @@ export default function HeaderNaoAutenticado() {
                                         </a>
                                     </li>
                                     <li className="nav-item fw-bold">
+                                        <a href="/pedido" className="nav-link">
+                                            Pedido
+                                        </a>
+                                    </li>
+                                    <li className="nav-item fw-bold">
                                         <button onClick={sairSistema} className="nav-link">
                                             Sair
                                         </button>

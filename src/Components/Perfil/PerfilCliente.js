@@ -6,7 +6,7 @@ import { CirclesWithBar } from 'react-loader-spinner'
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-export default function DashBoard() {
+export default function Perfil() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [cep, setCep] = useState('')
